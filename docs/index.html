@@ -1,13 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" sizes="16x16" href="img/title-logo.png">
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <!-- 테일윈드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <!-- favicon -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css'>
+    <!--link-연결-->
+    <link rel="stylesheet" href="index.css">
+    <script defer type="text/javascript" src="index.js"></script>
 </head>
+
 <body>
-    <h1>뚜루두루루루
-    
-    </h1>
+    <nav id="nav">
+        <div class="nav-flex">
+            <h1>logo</h1>
+            <div class="ham">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
+            </div>
+            <ul class="menu ">
+                <li class="active home"><a href="#sction1">home</a></li>
+                <li class="Portfolio"><a href="#sction2">Portfolio</a></li>
+                <li class="Work"><a href="#sction3">Work</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="contents">
+        <div id="section1">
+            <div class="bio_wrapper mx_30 mb_30">
+                <h1 class="bio_layout">
+                    <div class="o1">New challenge</div>
+                    <div class="o2">A work of art.</div>
+                    <div class="o3">
+                        <div class="">— made in</div>
+                        <div class="v-center">
+                            <span class="rotate-center">
+                                <img src="https://i.imgur.com/xNxIRNO.png" alt="">
+                            </span>
+                            <p>I will keep devoting my love to creating intuitive experiences in the future in order to
+                                improve my skills and support the growth of my business.</p>
+                        </div>
+                    </div>
+                    <div class="o4">
+                        <p>Inspired by my life.</p>
+                        <!--           <div style="width:160px"></div> -->
+                        <div>HaeSol.</div>
+                    </div>
+                </h1>
+                <div class="bio_box">
+                    <div class="wrapper-title">P.HaeSol <br class="w425_hide">2024<small>©</small></div>
+                    <div class="bio_social" aria-label="social links">
+                        <ul class="footer_social_links">
+                            <li><a href="#" target="_blank" rel="Kakaotalk" aria-label="kakaotalk"><img
+                                        src="img/talk-icon.png"></a></li>
+                            <li><a href="#" target="_blank" rel="Gmail" aria-label="gmail"><img
+                                        src="img/mail-icon.png"></a></li>
+                            <li><a href="#" target="_blank" rel="Naver" aria-label="naver"><img
+                                        src="img/naver-icon.png"></a></li>
+                            <li><a href="#" target="_blank" rel="Github" aria-label="github"><img
+                                        src="img/git-icon.png"></a></li>
+                        </ul>
+                    </div>
+                    <div class="bio_copyrights ">© All Rights Reserve</div>
+                </div>
+            </div>
+        </div>
+        <div id="section2">
+            <h2>section2</h2>
+        </div>
+        <div id="section3">
+            <h2>section3</h2>
+        </div>
+    </section>
 </body>
+
 </html>
