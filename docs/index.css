@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* 노멀라이즈 */
 li {
   list-style: none;
