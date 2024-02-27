@@ -1,4 +1,3 @@
-// 페이지 내비게이션
 
 var nav = $("#nav .menu li");
 var cont = $("#contents > div ");
@@ -64,6 +63,21 @@ $(window).resize(function(){
   var wWidth = $(window).width();
   //화면 크기가 830 이상일 때
   if(width > 830 && $(".menu").is(";hidden")){
-    $(".menu").removeAttr("style");
+    $(".menu").remobeAttr("style");
   }
 });
+
+// 메뉴 닫기
+$(".menu > li").click(function(){
+  $(".ham").removeClass("active");
+  $(".menu").hide();
+});
+    // $(".ham.active").click(function() {
+    //     $(".ham").removeClass("open");
+    //     // $("#main").removeClass("overflow-hidden");
+    //     $(".menu> li").removeClass("active");
+    //     $(".menu").hide();
+    // });
+
+// $(window).resize(function(){
+// resposiveSize();	
