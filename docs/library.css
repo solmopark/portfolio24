@@ -31,6 +31,67 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'SBAggroB'; 
+    src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff'); 
+    font-weight:normal; 
+    font-style:normal; 
+}
+@font-face {
+    font-family:'SBAggroM'; 
+    src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff') format('woff'); 
+    font-weight:normal; 
+    font-style:normal; 
+}
+@font-face {
+    font-family:'SBAggroL'; 
+    src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff'); 
+    font-weight:normal; 
+    font-style:normal; 
+}
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+/* root */
+:root {
+    --fs-xl: clamp(2.5rem, 8vw, 12.8rem);
+    --fs-l: clamp(0.8rem, 8vw, 4rem);
+    --fs-m: clamp(0.8rem, 4vw, 2rem);
+    --fs-s: clamp(0.8rem, 4vw, 1.25rem);
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --f_ogg: Ogg, sans-serif;
+    --bg-1:#2196f3;
+}
+
+
 /* margin */
 .m_auto {margin: auto;}
 .m_10 {margin: 10px;}
