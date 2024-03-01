@@ -1,83 +1,148 @@
+console.clear();
 
-var nav = $("#nav .menu li");
-var cont = $("#contents > div ");
+// 메뉴
+function ToggleNav__init() {
+  var nav = document.getElementById("nav");
+  var navlinks = nav.getElementsByTagName("a");
 
-nav.click(function(e){
-  e.preventDefault();
-  var target = $(this);
-  var index = target.index();
-  //alert(index);
-  var section = cont.eq(index);
-  var offset =section.offset().top;
-  //alert(offset);
-  $("html,body").animate({scrollTop:offset},600,"easeInOutBack");
-});
+  function toggleNav() {
+    nav.classList.contains("active")
+      ? nav.classList.remove("active")
+      : nav.classList.add("active");
+  }
 
-$(window).scroll(function(){
-  var wScroll = $(this).scrollTop();
-  
-  if(wScroll >= cont.eq(0).offset().top){
-    nav.removeClass("active");
-    nav.eq(0).addClass("active");
+  document.getElementById("nav-icon").addEventListener("click", function (e) {
+    e.preventDefault();
+    toggleNav();
+  });
+
+  for (var i = 0; i < navlinks.length; i++) {
+    navlinks[i].addEventListener("click", function () {
+      toggleNav();
+    });
   }
-  if(wScroll >=cont.eq(1).offset().top){
-    nav.removeClass("active");
-    nav.eq(1).addClass("active");
-  }
-  if(wScroll >=cont.eq(2).offset().top){
-    nav.removeClass("active");
-    nav.eq(2).addClass("active");
-  }
-  if(wScroll >=cont.eq(3).offset().top){
-    nav.removeClass("active");
-    nav.eq(3).addClass("active");
-  }
-  if(wScroll >=cont.eq(4).offset().top){
-    nav.removeClass("active");
-    nav.eq(4).addClass("active");
-  }
-  if(wScroll >=cont.eq(5).offset().top){
-    nav.removeClass("active");
-    nav.eq(5).addClass("active");
+}
+ToggleNav__init();
+
+// 스크롤
+ScrollOut({
+  cssProps: {
+    visibleY: true,
+    viewportY: true
   }
 });
 
+Splitting({ target: '.heading' });
 
-//ham메뉴//
-$(".ham").click(function(){
-  //메뉴보여주는 방식
-  // $(".menu").css("display","block");
-  // $(".menu").show();
-  // $(".menu").fadeIn();
-  // $(".menu").slideDown();
-  // $(".menu").toggle();
-  // $(".menu").fadeToggle();
-  $(".menu").slideToggle();
-});
+// 버블효과
+function BubbleEffect1__init(canvasWidth, canvasHeight) {
+  const canvas = document.getElementsByClassName("bubble-effect-1__canvas")[0];
+  canvas.width = canvasWidth;
+  canvas.height = canvasHeight;
 
-$(".ham").click(function(){
-  $(this).toggleClass("active")
-});
+  const ctx = canvas.getContext("2d");
 
-$(window).resize(function(){
-  var wWidth = $(window).width();
-  //화면 크기가 830 이상일 때
-  if(width > 830 && $(".menu").is(";hidden")){
-    $(".menu").remobeAttr("style");
+  /*Modify options here*/
+
+  //possible characters that will appear
+  const characterList = ["o", ".", "。", "˙"];
+
+  //stocks possible character attributes
+  const layers = {
+    n: 5, //number of layers
+    letters: [100, 40, 30, 20, 10], //letters per layer (starting from the deepest layer)
+    coef: [0.1, 0.2, 0.4, 0.6, 0.8], //how much the letters move from the mouse (starting from the deepest layer)
+    size: [16, 22, 36, 40, 46], //font size of the letters (starting from the deepest layer)
+    color: ["#fff", "#eee", "#ccc", "#bbb", "#aaa"], //color of the letters (starting from the deepest layer)
+    font: "Courier" //font family (of every layer)
+  };
+
+  /*End of options*/
+
+  const characters = [];
+  let mouseX = document.body.clientWidth / 2;
+  let mouseY = document.body.clientHeight / 2;
+
+  const rnd = {
+    btwn: function (min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    },
+    choose: function (list) {
+      return list[rnd.btwn(0, list.length)];
+    }
+  };
+
+  /*LETTER DRAWING*/
+
+  function drawLetter(char) {
+    ctx.font = char.size + "px " + char.font;
+    ctx.fillStyle = char.color;
+
+    const x = char.posX + (mouseX - canvas.width / 2) * char.coef;
+    const y = char.posY + (mouseY - canvas.height / 2) * char.coef;
+
+    ctx.fillText(char.char, x, y);
   }
-});
 
-// 메뉴 닫기
-$(".menu > li").click(function(){
-  $(".ham").removeClass("active");
-  $(".menu").hide();
-});
-    // $(".ham.active").click(function() {
-    //     $(".ham").removeClass("open");
-    //     // $("#main").removeClass("overflow-hidden");
-    //     $(".menu> li").removeClass("active");
-    //     $(".menu").hide();
-    // });
+  /*ANIMATION*/
 
-// $(window).resize(function(){
-// resposiveSize();	
+  document.onmousemove = function (ev) {
+    mouseX = ev.pageX - canvas.offsetLeft;
+    mouseY = ev.pageY - canvas.offsetTop;
+
+    if (window.requestAnimationFrame) {
+      requestAnimationFrame(update);
+    } else {
+      update();
+    }
+  };
+
+  function update() {
+    clear();
+    render();
+  }
+
+  function clear() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  function render() {
+    for (var i = 0; i < characters.length; i++) {
+      drawLetter(characters[i]);
+    }
+  }
+
+  /*INITIALIZE*/
+  function createLetters() {
+    for (let i = 0; i < layers.n; i++) {
+      for (let j = 0; j < layers.letters[i]; j++) {
+        const character = rnd.choose(characterList);
+        const x = rnd.btwn(0, canvas.width);
+        const y = rnd.btwn(0, canvas.height);
+
+        characters.push({
+          char: character,
+          font: layers.font,
+          size: layers.size[i],
+          color: layers.color[i],
+          layer: i,
+          coef: layers.coef[i],
+          posX: x,
+          posY: y
+        });
+      }
+    }
+  }
+
+  createLetters();
+  update();
+}
+BubbleEffect1__init(2560, 1080);
+
+
+// Aos효과
+AOS.init({
+  easing: "linear",
+  once: false,
+  mirror: false
+});
