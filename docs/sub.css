@@ -1,0 +1,134 @@
+/* font */
+@font-face {
+    font-family: 'Ogg';
+    src: url('https://assets.website-files.com/643052002ca347e0ff92ee23/643059ad4ee6bc55901e353f_Ogg-Regular.ttf') format('truetype'), url('https://assets.website-files.com/643052002ca347e0ff92ee23/643059ad19a1af8cde6dd641_Ogg-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ogg';
+    src: url('https://assets.website-files.com/643052002ca347e0ff92ee23/64305cf5a2b39f49a82d9469_Ogg%20Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Leitmotivscript';
+    src: url('https://assets.website-files.com/643052002ca347e0ff92ee23/64ae8888a955398d00806d1c_LeitmotivScript.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lust Pro';
+    src: url('https://uploads-ssl.webflow.com/6423ffa824c4cf8b7b4f57db/6423ffb921b96c153fc36fe9_LustPro-No3.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'SBAggroB'; 
+    src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff'); 
+    font-weight:normal; 
+    font-style:normal; 
+}
+@font-face {
+    font-family:'SBAggroM'; 
+    src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff') format('woff'); 
+    font-weight:normal; 
+    font-style:normal; 
+}
+@font-face {
+    font-family:'SBAggroL'; 
+    src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff'); 
+    font-weight:normal; 
+    font-style:normal; 
+}
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+/* root */
+:root {
+    --fs-xl: clamp(2.5rem, 8vw, 12.8rem);
+    --fs-l: clamp(0.8rem, 8vw, 4rem);
+    --fs-m: clamp(0.8rem, 4vw, 2rem);
+    --fs-s: clamp(0.8rem, 4vw, 1.25rem);
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --f_ogg: Ogg, sans-serif;
+    --bg-1:#2196f3;
+}
+
+
+/* Area */
+.textArea {font-size:1.05rem; line-height:2rem; text-align:justify; letter-spacing:-0.5px;}
+
+
+.imgArea {overflow:hidden; text-align:center; margin:0; font-size:0; line-height:0;}
+.imgArea > img {max-width:100%; overflow:hidden;}
+
+/* margin */
+.m_auto {margin: auto;}
+.m_10 {margin: 10px;}
+.m_20 {margin: 20px;}
+.m_30 {margin: 30px;}
+.m_40 {margin: 40px;}
+
+.mx_10 {margin: 0 10px;}
+.mx_20 {margin: 0 20px;}
+.mx_30 {margin: 0 30px;}
+.mx_40 {margin: 0 40px;}
+
+.mt_10 {margin-top: 10px;}
+.mt_20 {margin-top: 20px;}
+.mt_30 {margin-top: 30px;}
+.mt_40 {margin-top: 40px;}
+
+.mb_10 {margin-bottom: 10px;}
+.mb_20 {margin-bottom: 20px;}
+.mb_30 {margin-bottom: 30px;}
+.mb_40 {margin-bottom: 40px;}
+
+/* show */
+.w1440_hide {display: block;}
+.w1024_hide {display: block;}
+.w768_hide {display: block;}
+.w425_hide {display: block;}
+.w375_hide {display: block;}
+
+.w1024_show {display: none;}
+.w768_show {display: none;}
+.w680_show {display: none;}
+.w425_show {display: none;}

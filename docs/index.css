@@ -379,11 +379,8 @@ h2 {
 /*------- roll-text-start -------*/
 #roll-text {
     width: 100vw;
-    color: #fff;
-    font-family:'GmarketSans';
     font-size: var(--fs-m);
-    // font-weight: 900;
-    z-index: 5;
+    font-weight: 900;
     margin: 0 auto;
     overflow: hidden; /* 스크롤 사라짐 */
     background-color: #000;
@@ -400,6 +397,7 @@ h2 {
 }
 
 .track .text {
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -408,7 +406,6 @@ h2 {
     text-align: center;
     animation: roll 30s linear 1s infinite alternate;
     will-change: transform;
-    position: relative;
 }
 
 @keyframes roll {
@@ -416,13 +413,13 @@ h2 {
         transform: translateX(5%);
     }
     100% {
-    transform: translateX(-35%);
+        transform: translateX(-35%);
     }
 }
 
 #roll-text .track .text.-twox {
-    -webkit-animation-duration: 40s;
-    animation-duration: 40s;
+    -webkit-animation-duration: 35s;
+    animation-duration: 35s;
 }
 
 #roll-text .track .text.-r {
@@ -439,95 +436,108 @@ h2 {
     }
 }
 
-/* rolling-text hover */
-#roll-text:hover .track {
-}
-
 #roll-text .track:hover .text {
     /* roll -> 애니메이션 멈춤 */
     animation-play-state: paused;
 }
 
-#roll-text .track .text > *:hover {
-    /* roll -> p -> hover 필터 적용 */
-    background-color: #f3f3f3;
-    color: #f3f3f3;
-}
-
-#roll-text .track .text .box:hover .box-t {display: none;}
-
-#roll-text .track .text .box .pro-box {display: none;}
-
-#roll-text .track .text .box:hover .pro-box {display: block;}
-
-.track .text > .box {
+#roll-text .track .text > .box {
     height: 100%;
     width: calc(100% / 8);
     position: relative;
+    color: #fff;
 }
 
-.track .text > .box::before{
-    content:"•";
-    position:absolute;
-    font-size:1rem;
-    top:40%;
-    left:0;
+#roll-text .track .text > .box::before {
+    content: "|";
+    position: absolute;
+    font-size: 1rem;
+    top: 40%;
+    left: 0;
 }
+#roll-text .track .text .box:hover + ::before {color:#fff !important;}
 
-#roll-text .track .text .box:hover + ::before{opacity:0;}
+#roll-text .track .text .box .box-t {padding: 20px 0;}
 
-.track .text .box .pro-box {
+#roll-text .track .text .box:hover .box-t {display: none;}
+
+#roll-text .track .text .box .pro-box {
+    /* hover -> 내용 */
     height: 100%;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 40px;
     position: absolute;
     width: 100%;
     bottom: 0;
+    opacity:0;
+    /* display: none; */
 }
 
-.track .text .box .box-t {
-    padding: 26px 0;
+#roll-text .track .text .box:hover .pro-box {
+    /* display: block; */
+    opacity:1;
 }
-.track .text .box .pro-t {
+
+#roll-text .track .text .box .pro-t {
     display: flex;
-    padding: 10px 0;
+    padding: 0.8rem 0 0.4rem;
+    justify-content: center;
     align-items: center;
-    color: #1a1f24;
+    color:var(--bg-1);
 }
 
-.track .text .box .pro-t img {
+
+#roll-text .track .text .box .pro-t img {
     margin-right: 0.5rem;
+    width: 10%;
+    /* filter: invert(1); */
+    filter: invert(55%) sepia(84%) saturate(3665%) hue-rotate(185deg) brightness(98%) contrast(94%);
 }
-.track .text .box .pro-s {
+#roll-text .track .text .box .pro-s {
+    /* 퍼센트 바 */
     text-align: center;
     border-radius: 9999px;
-    height: 0.625rem;
-    border: 1px solid #1a1f24;
+    height: 0.5rem;
+    border: 1px solid var(--bg-1);
+    position:relative;
 }
 
-.track .text .box .pro-s .bar {
-    background-color: #1a1f24;
+#roll-text .track .text .box .pro-s .bar {height: 100%;}
+
+#roll-text .track .text .box .wi{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:10;
+    background-color: var(--bg-1);
     height: 100%;
+    width:0;
     border-radius: 9999px;
-    animation: bar 2s linear infinite;
-    transition-property: background-color;
+    transition-property: width;
+  /*   transition-delay: 1s; */
 }
 
 
-  /* bar -> 퍼센트 */
-@keyframes bar {
-    0% {
-        opacity: 25%;
-    }
-    50% {
-        background-color: #3f51b5;
-        opacity: 100%;
-    }
+#roll-text .track .text .box:hover  .wi {transition:width 0.6s ease-out;}
 
-    100% {
-        opacity: 100%;
-    }
-}
+#roll-text .track .text .box:hover .wi.wi1 {width:95%;}
+#roll-text .track .text .box:hover .wi.wi2 {width:75%;}
+#roll-text .track .text .box:hover .wi.wi3 {width:50%;}
+#roll-text .track .text .box:hover .wi.wi4 {width:45%;}
+#roll-text .track .text .box:hover .wi.wi5 {width:65%;}
+#roll-text .track .text .box:hover .wi.wi6 {width:70%;}
+#roll-text .track .text .box:hover .wi.wi7 {width:65%;}
+#roll-text .track .text .box:hover .wi.wi8 {width:65%;}
+
+
+#roll-text .track .text .box:hover .wi.wi9 {width:70%;}
+#roll-text .track .text .box:hover .wi.wi10 {width:85%;}
+#roll-text .track .text .box:hover .wi.wi11 {width:85%;}
+#roll-text .track .text .box:hover .wi.wi12 {width:70%;}
+#roll-text .track .text .box:hover .wi.wi13 {width:85%;}
+#roll-text .track .text .box:hover .wi.wi14 {width:75%;}
+#roll-text .track .text .box:hover .wi.wi15 {width:50%;}
+#roll-text .track .text .box:hover .wi.wi16 {width:60%;}
 /*------- roll-text-end -------*/
 
 
