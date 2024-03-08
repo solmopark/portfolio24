@@ -146,3 +146,55 @@ AOS.init({
   once: false,
   mirror: false
 });
+
+// fade in #back-top
+$(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+      $('#back-top').fadeIn();
+    } else {
+      $('#back-top').fadeOut();
+
+    }
+  });
+
+
+  // scroll body to 0px on click
+  $('a#back-top').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 1000);
+    return true;
+  });
+});
+
+// 3d swiper
+var swiper = new Swiper(".swiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2,
+    slideShadows: true
+  },
+  keyboard: {
+    enabled: true
+  },
+  // mousewheel: {
+  //   thresholdDelta: 70
+  // },
+  spaceBetween: 60,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false
+  }
+});

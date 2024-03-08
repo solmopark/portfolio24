@@ -12,40 +12,55 @@
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <!-- 테일윈드 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <!-- Swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <!-- lightgallery -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/lightgallery.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/plugins/zoom/lg-zoom.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/plugins/video/lg-video.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/css/lightgallery-bundle.css">
     <!-- Aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 테일윈드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!--link-연결-->
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="sub.css">
-    <script defer type="text/javascript" src="index.js"></script>
+    <script defer type="text/javascript" src="index.js"></script>    
+    <script defer type="text/javascript" src="gallery.js"></script>
 </head>
 
 <body>
     <!-- Header-START -->
     <nav id="nav" class="subHeader">
-        <!-- top-logo -->
-        <a href="#" class="logo" style="position: fixed;"><img
-                src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/logo.png" alt=""></a>
-        <!-- Ham-Menu -->
-        <button class="nav-icon" id="nav-icon"><span></span></button>
-        <!-- Mobile-Menu -->
-        <ul class="menu Mmenu">
-            <li><a href="#home" data-hover="home">home</a></li>
-            <li><a href="#Portfolio" data-hover="Portfolio">Portfolio</a></li>
-            <li><a href="#Work" data-hover="Work">Work</a></li>
-            <li><a href="#contact" data-hover="contact">contact</a></li>
-        </ul>
-        <!-- PC-Menu -->
-        <ul class="menu Pmenu">
-            <li><a href="#home" data-hover="home">home</a></li>
-            <li><a href="#Portfolio" data-hover="Portfolio">Portfolio</a></li>
-            <li><a href="#Work" data-hover="Work">Work</a></li>
-            <li><a href="#contact" data-hover="contact">contact</a></li>
-        </ul>
+        <div class="headflex" style="">
+            <!-- top-logo -->
+            <a href="#" class="logo" style="position: fixed;"><img
+                    src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/logo.png" alt=""></a>
+            <!-- Ham-Menu -->
+            <button class="nav-icon" id="nav-icon"><span></span></button>
+            <!-- Mobile-Menu -->
+            <ul class="menu Mmenu">
+                <li><a href="#home" data-hover="home">home</a></li>
+                <li><a href="#Portfolio" data-hover="Portfolio">Portfolio</a></li>
+                <li><a href="#Work" data-hover="Work">Work</a></li>
+                <li><a href="#contact" data-hover="contact">contact</a></li>
+            </ul>
+            <!-- PC-Menu -->
+            <ul class="menu Pmenu">
+                <li><a href="#home" data-hover="home">home</a></li>
+                <li><a href="#Portfolio" data-hover="Portfolio">Portfolio</a></li>
+                <li><a href="#Work" data-hover="Work">Work</a></li>
+                <li><a href="#contact" data-hover="contact">contact</a></li>
+            </ul>
+        </div>
+
     </nav>
     <!-- Header-END -->
 
@@ -70,7 +85,7 @@
                 <div class="mintext">
                     <div class="txt">
                         <div class="t1">
-                            <img class="star" src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/dco.png"
+                            <img class="star" src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/dco1.png"
                                 alt="">
                             <p>I will keep devoting my love to creating intuitive experiences in the future in order
                                 to
@@ -229,31 +244,35 @@
             </div>
         </div>
 
-        <!-- Section-2 -->
+        <!-- Section-2-Portfolio -->
         <section id="Portfolio" class="content-section" data-scroll>
-            <div class="figure" style="background:pink;"></div>
+            <div class="figure">
+                <img src="https://i.imgur.com/NsfASnQ.jpg" />
+            </div>
 
             <div class="content">
                 <header class="header">
-                    <div class="subheading">All-Old Techniques</div>
+                    <div class="subheading">As of now.</div>
                     <h2 class="heading">
                         In the future <br />Will become.
                     </h2>
                 </header>
-                <p class="paragraph">
-                    Hello. <br>
-                    I'm a new web developer.<br>
-                    She likes to learn and uses her quick adaptability<br>
-                    To become a front-end at the publisher stage<br>
-                    I will grow and develop.
-                </p>
-                <p class="paragraph">
-                    안녕하십니까.<br>
-                    신입 web developer 입니다.<br>
-                    배우길 좋아하며 빠른 적응력을 적극활용해<br>
-                    퍼블리셔의 단계에서 프론트 앤드가 될 수 있도록<br>
-                    성장하고 발전하겠습니다.
-                </p>
+                <div class="context">
+                    <p class="paragraph">
+                        Hello. <br>
+                        I'm a new web developer.<br>
+                        She likes to learn and uses her quick adaptability<br>
+                        To become a front-end at the publisher stage<br>
+                        I will grow and develop.
+                    </p>
+                    <p class="paragraph">
+                        안녕하십니까.<br>
+                        신입 web developer 입니다.<br>
+                        배우길 좋아하며 빠른 적응력을 적극활용해<br>
+                        퍼블리셔의 단계에서 프론트 앤드가 될 수 있도록<br>
+                        성장하고 발전하겠습니다.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -384,21 +403,303 @@
             </div>
         </div>
 
-        <!-- Section-3 -->
-        <section id="Work" class="content-section" data-scroll>
-            <figure class="figure">
-                <img src="https://source.unsplash.com/rCOWMC8qf8A/800x800" />
-            </figure>
-            <div class="content">
-                <header class="header">
-                    <div class="subheading">All-Old Techniques</div>
-                    <h2 class="heading">Not Evolved,<br />not transformed either.</h2>
-                </header>
-                <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nisi illum rem recusandae. Tempore
-                    consequuntur nihil cumque quis nam deserunt earum atque et ullam facere accusamus cum natus, autem
-                    numquam.
-                </p>
+        <!-- Section-3-Work -->
+        <section id="Work" data-scroll>
+            <div class="folderWrap">
+                <div class="folder-top">
+                    <h4>User Folders</h4>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="forder-name"><i class="fa-regular fa-folder"></i>Work history</div>
+                <div class="user">
+                    <div class="folder gallery" id="gallery-1">
+                        <div class="folder__back">
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="folder__front"></div>
+                            <div class="folder__front right"></div>
+                        </div>
+                        <p>Group 1</p>
+                    </div>
+                    <div class="folder gallery" id="gallery-2">
+                        <div class="folder__back">
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="folder__front"></div>
+                            <div class="folder__front right"></div>
+                        </div>
+                        <p>Group 2</p>
+                    </div>
+                    <div class="folder gallery" id="gallery-3">
+                        <div class="folder__back">
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="folder__front"></div>
+                            <div class="folder__front right"></div>
+                        </div>
+                        <p>Group 3</p>
+                    </div>
+                    <div class="folder gallery" id="gallery-4">
+                        <div class="folder__back">
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="folder__front"></div>
+                            <div class="folder__front right"></div>
+                        </div>
+                        <p>Group 1</p>
+                    </div>
+                    <div class="folder gallery" id="gallery-5">
+                        <div class="folder__back">
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="folder__front"></div>
+                            <div class="folder__front right"></div>
+                        </div>
+                        <p>Group 2</p>
+                    </div>
+                    <div class="folder gallery" id="gallery-6">
+                        <div class="folder__back">
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="folder__front"></div>
+                            <div class="folder__front right"></div>
+                        </div>
+                        <p>Group 3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- swiper -->
+        <section class="swiperWrap">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ">
+                        <div class="dot">
+                            <span class="dog_orange"></span>
+                            <span class="dog_yellow"></span>
+                            <span class="dog_green"></span>
+                            <span class="dog_blue"></span>
+                        </div>
+
+                        <img class="swiper-slide--one"
+                            src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/together.jpg">
+
+                        <div class="swiperTbox">
+                            <h2>TODOGTHER</h2>
+                            <p class="textArea">반려동물 간식 레시피 어플 ‘투개더’ <br>
+                                반려인과 반려견을 위한 레시피 어플로 레시피 영상 및 쇼핑을 동시에하며 더나은 반려생활을 위한 팁과 소통을 나누는 커뮤니티 기능을 담았습니다.
+                                FIGMA를 통해 프로토타입을 구현하였습니다.</p>
+                        </div>
+
+                        <div class="move_btn">
+                            <!-- right/next navigation button -->
+                            <a class="fancy-slider-button-prev fancy-slider-button" href="https://to2.kr/dDw"
+                                target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                                    <g class="fancy-slider-svg-wrap">
+                                        <g class="fancy-slider-svg-circle-wrap">
+                                            <circle cx="42" cy="42" r="40"></circle>
+                                        </g>
+                                        <path class="fancy-slider-svg-arrow"
+                                            d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z">
+                                        </path>
+                                        <path class="fancy-slider-svg-line" d="M80,0H0"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <!-- left/previous navigation button -->
+                            <a class="fancy-slider-button-next fancy-slider-button" href="https://mo.whph.xyz/"
+                                target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                                    <g class="fancy-slider-svg-wrap">
+                                        <g class="fancy-slider-svg-circle-wrap">
+                                            <circle cx="42" cy="42" r="40"></circle>
+                                        </g>
+                                        <path class="fancy-slider-svg-arrow"
+                                            d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z">
+                                        </path>
+                                        <path class="fancy-slider-svg-line" d="M80,0H0"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide ">
+                        <div class="dot">
+                            <span class="dp_navy"></span>
+                            <span class="dp_purple"></span>
+                            <span class="dp_Lpurple"></span>
+                            <span class="dp_Sblue"></span>
+                        </div>
+
+                        <img class="swiper-slide--one"
+                            src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/disney.jpg">
+                        <div class="swiperTbox">
+                            <h2>DISNEY+ </h2>
+                            <p class="textArea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nesciunt
+                                illum debitis aliquam sint, a itaque mollitia rem deserunt nam voluptas quia sapiente
+                                saepe! Impedit nulla dolorum quo obcaecati nisi?</p>
+                        </div>
+                        <div class="move_btn">
+                            <!-- right/next navigation button -->
+                            <a class="fancy-slider-button-prev fancy-slider-button" href="https://di.whph.xyz/"
+                                target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                                    <g class="fancy-slider-svg-wrap">
+                                        <g class="fancy-slider-svg-circle-wrap">
+                                            <circle cx="42" cy="42" r="40"></circle>
+                                        </g>
+                                        <path class="fancy-slider-svg-arrow"
+                                            d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z">
+                                        </path>
+                                        <path class="fancy-slider-svg-line" d="M80,0H0"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <!-- left/previous navigation button -->
+                            <a class="fancy-slider-button-next fancy-slider-button" href="https://dp.whph.xyz/"
+                                target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                                    <g class="fancy-slider-svg-wrap">
+                                        <g class="fancy-slider-svg-circle-wrap">
+                                            <circle cx="42" cy="42" r="40"></circle>
+                                        </g>
+                                        <path class="fancy-slider-svg-arrow"
+                                            d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z">
+                                        </path>
+                                        <path class="fancy-slider-svg-line" d="M80,0H0"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide ">
+                        <div class="dot">
+                            <span class="pl_red"></span>
+                            <span class="pl_orange"></span>
+                            <span class="pl_green"></span>
+                            <span class="pl_blue"></span>
+                        </div>
+
+                        <img class="swiper-slide--one"
+                            src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/projectL.jpg">
+
+                        <div class="swiperTbox">
+                            <h2>PROJECT LION </h2>
+                            <p class="textArea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nesciunt
+                                illum debitis aliquam sint, a itaque mollitia rem deserunt nam voluptas quia sapiente
+                                saepe! Impedit nulla dolorum quo obcaecati nisi?</p>
+                        </div>
+
+                        <div class="move_btn">
+                            <!-- right/next navigation button -->
+                            <a class="fancy-slider-button-prev fancy-slider-button"
+                                href="https://solmopark.github.io/Project-lion/" target="_blank" title="PROJECT LION">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                                    <g class="fancy-slider-svg-wrap">
+                                        <g class="fancy-slider-svg-circle-wrap">
+                                            <circle cx="42" cy="42" r="40"></circle>
+                                        </g>
+                                        <path class="fancy-slider-svg-arrow"
+                                            d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z">
+                                        </path>
+                                        <path class="fancy-slider-svg-line" d="M80,0H0"></path>
+                                    </g>
+                                </svg>
+                            </a>
+
+                            <!-- left/previous navigation button -->
+                            <div class="fancy-slider-button-next" style="cursor:none;"></div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide ">
+                        <div class="dot">
+                            <span class="j_hblue"></span>
+                            <span class="j_Scarlet"></span>
+                            <span class="j_hgreen"></span>
+                            <span class="j_dblue"></span>
+                        </div>
+
+                        <img class="swiper-slide--one"
+                            src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/jeju.jpg">
+
+                        <div class="swiperTbox">
+                            <h2>JEJUBEER</h2>
+                            <p class="textArea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nesciunt
+                                illum debitis aliquam sint, a itaque mollitia rem deserunt nam voluptas quia sapiente
+                                saepe! Impedit nulla dolorum quo obcaecati nisi?</p>
+                        </div>
+                        <div class="move_btn">
+                            <!-- right/next navigation button -->
+                            <a class="fancy-slider-button-prev fancy-slider-button" href="#" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                                    <g class="fancy-slider-svg-wrap">
+                                        <g class="fancy-slider-svg-circle-wrap">
+                                            <circle cx="42" cy="42" r="40"></circle>
+                                        </g>
+                                        <path class="fancy-slider-svg-arrow"
+                                            d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z">
+                                        </path>
+                                        <path class="fancy-slider-svg-line" d="M80,0H0"></path>
+                                    </g>
+                                </svg>
+                            </a>
+
+                            <!-- left/previous navigation button -->
+                            <div class="fancy-slider-button-next" style="cursor:none;"></div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide ">
+                        <div class="dot">
+                            <span class="p_dblue"></span>
+                            <span class="p_blue"></span>
+                            <span class="p_skyblue"></span>
+                            <span class="p_hblue"></span>
+                        </div>
+
+                        <img class="swiper-slide--one"
+                            src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/poseidon.jpg">
+
+                        <div class="swiperTbox">
+                            <h2>POSEIDON </h2>
+                            <p class="textArea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nesciunt
+                                illum debitis aliquam sint, a itaque mollitia rem deserunt nam voluptas quia sapiente
+                                saepe! Impedit nulla dolorum quo obcaecati nisi?</p>
+                        </div>
+                        <div class="move_btn">
+                            <!-- right/next navigation button -->
+                            <a class="fancy-slider-button-prev fancy-slider-button" href="https://hs.whph.xyz/"
+                                target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                                    <g class="fancy-slider-svg-wrap">
+                                        <g class="fancy-slider-svg-circle-wrap">
+                                            <circle cx="42" cy="42" r="40"></circle>
+                                        </g>
+                                        <path class="fancy-slider-svg-arrow"
+                                            d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z">
+                                        </path>
+                                        <path class="fancy-slider-svg-line" d="M80,0H0"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <!-- left/previous navigation button -->
+                            <div class="fancy-slider-button-next" style="cursor:none;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -432,81 +733,12 @@
                 </p>
             </div>
         </section>
-        <figure class="figure"><img src="https://source.unsplash.com/Odhl-kitI2c/800x800" /></figure>
-        <div class="content">
-            <header class="header">
-                <div class="subheading">All-Old Techniques</div>
-                <h2 class="heading">Not Evolved,<br />not transformed either.</h2>
-            </header>
-            <p class="paragraph">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nisi illum rem recusandae. Tempore
-                consequuntur nihil cumque quis nam deserunt earum atque et ullam facere accusamus cum natus, autem
-                numquam.
-            </p>
-        </div>
-        </section>
-
-        <section class="content-section" data-scroll>
-            <figure class="figure"><img src="https://source.unsplash.com/PIKyHi0jsAI/800x800" /></figure>
-            <div class="content">
-                <header class="header">
-                    <div class="subheading">All-Old Techniques</div>
-                    <h2 class="heading">Not Evolved,<br />not transformed either.</h2>
-                </header>
-                <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nisi illum rem recusandae. Tempore
-                    consequuntur nihil cumque quis nam deserunt earum atque et ullam facere accusamus cum natus, autem
-                    numquam.
-                </p>
-            </div>
-        </section>
-
-        <section class="content-section" data-scroll>
-            <figure class="figure"><img src="https://source.unsplash.com/hBuwVLcYTnA/800x800" /></figure>
-            <div class="content">
-                <header class="header">
-                    <div class="subheading">All-Old Techniques</div>
-                    <h2 class="heading">Not Evolved,<br />not transformed either.</h2>
-                </header>
-                <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nisi illum rem recusandae. Tempore
-                    consequuntur nihil cumque quis nam deserunt earum atque et ullam facere accusamus cum natus, autem
-                    numquam.
-                </p>
-            </div>
-        </section>
-
-        <section class="content-section" data-scroll>
-            <figure class="figure"><img src="https://source.unsplash.com/ZEsfrZjZClQ/800x800" /></figure>
-            <div class="content">
-                <header class="header">
-                    <div class="subheading">All-Old Techniques</div>
-                    <h2 class="heading">Not Evolved,<br />not transformed either.</h2>
-                </header>
-                <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nisi illum rem recusandae. Tempore
-                    consequuntur nihil cumque quis nam deserunt earum atque et ullam facere accusamus cum natus, autem
-                    numquam.
-                </p>
-            </div>
-        </section>
-
-        <section class="content-section" data-scroll>
-            <figure class="figure"><img src="https://source.unsplash.com/iFPBRwZ4I-M/800x800" /></figure>
-            <div class="content">
-                <header class="header">
-                    <div class="subheading">All-Old Techniques</div>
-                    <h2 class="heading">Not Evolved,<br />not transformed either.</h2>
-                </header>
-                <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nisi illum rem recusandae. Tempore
-                    consequuntur nihil cumque quis nam deserunt earum atque et ullam facere accusamus cum natus, autem
-                    numquam.
-                </p>
-            </div>
-        </section> -->
     </div>
     <!-- container-START -->
+
+    <!-- top-button -->
+    <a id="back-top" href="#top"><img src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/top_1.png"
+            alt="">UP</a>
 </body>
 
 </html>
