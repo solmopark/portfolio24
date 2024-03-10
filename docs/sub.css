@@ -1,4 +1,5 @@
-/* font */
+/* ------------ font ------------*/
+/* Ogg-font */
 @font-face {
     font-family: 'Ogg';
     src: url('https://assets.website-files.com/643052002ca347e0ff92ee23/643059ad4ee6bc55901e353f_Ogg-Regular.ttf') format('truetype'), url('https://assets.website-files.com/643052002ca347e0ff92ee23/643059ad19a1af8cde6dd641_Ogg-Regular.otf') format('opentype');
@@ -6,7 +7,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Ogg';
     src: url('https://assets.website-files.com/643052002ca347e0ff92ee23/64305cf5a2b39f49a82d9469_Ogg%20Medium.ttf') format('truetype');
@@ -14,7 +14,7 @@
     font-style: normal;
     font-display: swap;
 }
-
+/* 필기체 */
 @font-face {
     font-family: 'Leitmotivscript';
     src: url('https://assets.website-files.com/643052002ca347e0ff92ee23/64ae8888a955398d00806d1c_LeitmotivScript.otf') format('opentype');
@@ -22,7 +22,7 @@
     font-style: normal;
     font-display: swap;
 }
-
+/* Lust Pro-font */
 @font-face {
     font-family: 'Lust Pro';
     src: url('https://uploads-ssl.webflow.com/6423ffa824c4cf8b7b4f57db/6423ffb921b96c153fc36fe9_LustPro-No3.otf') format('opentype');
@@ -30,14 +30,14 @@
     font-style: normal;
     font-display: swap;
 }
-
+/* 프리텐다드 */
 @font-face {
     font-family: 'Pretendard-Regular';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
-
+/* 어그로 */
 @font-face {
     font-family:'SBAggroB'; 
     src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff'); 
@@ -56,28 +56,26 @@
     font-weight:normal; 
     font-style:normal; 
 }
+/* g마켓 */
 @font-face {
     font-family: 'GmarketSans';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'GmarketSans';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
-
-
 @font-face {
     font-family: 'GmarketSans';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
 }
-/* root */
+/* ------------ root ------------ */
 :root {
     /* font */
     --fs-xl: clamp(3.2rem, 12vw, 12.8rem);
@@ -89,6 +87,8 @@
     --fw-light: 300;
     --fw-regular: 400;
     --f_ogg: Ogg, sans-serif;
+    --f_lust: 'Lust Pro';
+    
     /* color */
     /*--bg-1:#2196f3;*/
     --bg-2:#4f4f4f;
@@ -140,6 +140,9 @@
 .mb_30 {margin-bottom: 30px;}
 .mb_40 {margin-bottom: 40px;}
 
+.mr_5 {margin-right: 5px;}
+.mr_10 {margin-right: 10px;}
+
 /* show */
 .w1440_hide {display: block;}
 .w1024_hide {display: block;}
@@ -151,8 +154,10 @@
 .w768_show {display: none;}
 .w680_show {display: none;}
 .w425_show {display: none;}
+.w375_show {display: none;}
 
-/* color */
+
+/* ------------ color ------------ */
 .dog_green{background-color:#5A8D26;}
 .dog_blue{background-color:#A5DBE5;}
 .dog_yellow{background-color:#FCC21B;}

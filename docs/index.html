@@ -21,6 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/plugins/zoom/lg-zoom.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/plugins/video/lg-video.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/css/lightgallery-bundle.css">
+
     <!-- Aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -32,11 +33,15 @@
     <!--link-연결-->
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="sub.css">
-    <script defer type="text/javascript" src="index.js"></script>    
+    <script defer type="text/javascript" src="index.js"></script>
     <script defer type="text/javascript" src="gallery.js"></script>
 </head>
 
 <body>
+    <!--Custom-START-->
+    <div class="cursor">
+        <img class="ani-1" src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/dco1.png" alt=""></div>
+    <!-- Custom-END -->
     <!-- Header-START -->
     <nav id="nav" class="subHeader">
         <div class="headflex" style="">
@@ -117,7 +122,7 @@
                 </div>
         </section>
 
-        <!-- skil-1 -->
+        <!-- skill-1 -->
         <div id="roll-text">
             <div class="track">
                 <div class="text -twox">
@@ -258,14 +263,14 @@
                     </h2>
                 </header>
                 <div class="context">
-                    <p class="paragraph">
+                    <p class="paragraph p_t">
                         Hello. <br>
                         I'm a new web developer.<br>
                         She likes to learn and uses her quick adaptability<br>
                         To become a front-end at the publisher stage<br>
                         I will grow and develop.
                     </p>
-                    <p class="paragraph">
+                    <p class="paragraph p_t">
                         안녕하십니까.<br>
                         신입 web developer 입니다.<br>
                         배우길 좋아하며 빠른 적응력을 적극활용해<br>
@@ -273,10 +278,11 @@
                         성장하고 발전하겠습니다.
                     </p>
                 </div>
+                <div class="con_hover">Hover</div>
             </div>
         </section>
 
-        <!-- skil-2 -->
+        <!-- skill-2 -->
         <div id="roll-text">
             <div class="track">
                 <div class="text -r">
@@ -410,9 +416,10 @@
                     <h4>User Folders</h4>
                     <i class="fa-solid fa-xmark"></i>
                 </div>
-                <div class="forder-name"><i class="fa-regular fa-folder"></i>Work history</div>
+                <div class="forder-name"><i class="fa-regular fa-folder mr_5"></i>Work history</div>
                 <div class="user">
-                    <div class="folder gallery" id="gallery-1">
+                    <div class="folder gallery" id="gallery-1" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -420,9 +427,10 @@
                             <div class="folder__front"></div>
                             <div class="folder__front right"></div>
                         </div>
-                        <p>Group 1</p>
+                        <p>Banner</p>
                     </div>
-                    <div class="folder gallery" id="gallery-2">
+                    <div class="folder gallery" id="gallery-2" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -430,9 +438,10 @@
                             <div class="folder__front"></div>
                             <div class="folder__front right"></div>
                         </div>
-                        <p>Group 2</p>
+                        <p>Card <br class="w375_show">News</p>
                     </div>
-                    <div class="folder gallery" id="gallery-3">
+                    <div class="folder gallery" id="gallery-3" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -440,9 +449,10 @@
                             <div class="folder__front"></div>
                             <div class="folder__front right"></div>
                         </div>
-                        <p>Group 3</p>
+                        <p>Design</p>
                     </div>
-                    <div class="folder gallery" id="gallery-4">
+                    <div class="folder gallery" id="gallery-4" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -450,9 +460,10 @@
                             <div class="folder__front"></div>
                             <div class="folder__front right"></div>
                         </div>
-                        <p>Group 1</p>
+                        <p>Webzine</p>
                     </div>
-                    <div class="folder gallery" id="gallery-5">
+                    <div class="folder gallery" id="gallery-5" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -460,9 +471,10 @@
                             <div class="folder__front"></div>
                             <div class="folder__front right"></div>
                         </div>
-                        <p>Group 2</p>
+                        <p>Event&<br class="w375_show">Popup</p>
                     </div>
-                    <div class="folder gallery" id="gallery-6">
+                    <div class="folder gallery" id="gallery-6" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -470,7 +482,18 @@
                             <div class="folder__front"></div>
                             <div class="folder__front right"></div>
                         </div>
-                        <p>Group 3</p>
+                        <p>Renewal <br class="w375_show">design</p>
+                    </div>
+                    <div class="folder gallery" id="gallery-7" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
+                        <div class="folder__back">
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="paper"></div>
+                            <div class="folder__front"></div>
+                            <div class="folder__front right"></div>
+                        </div>
+                        <p>Personal <br class="w375_show">work</p>
                     </div>
                 </div>
             </div>
@@ -515,7 +538,7 @@
                                 </svg>
                             </a>
                             <!-- left/previous navigation button -->
-                            <a class="fancy-slider-button-next fancy-slider-button" href="https://mo.whph.xyz/"
+                            <a class="fancy-slider-button-next fancy-slider-button" href="https://todogther.whph.xyz/"
                                 target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
                                     <g class="fancy-slider-svg-wrap">
@@ -550,7 +573,7 @@
                         </div>
                         <div class="move_btn">
                             <!-- right/next navigation button -->
-                            <a class="fancy-slider-button-prev fancy-slider-button" href="https://di.whph.xyz/"
+                            <a class="fancy-slider-button-prev fancy-slider-button" href="https://dp.whph.xyz/"
                                 target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
                                     <g class="fancy-slider-svg-wrap">
@@ -565,7 +588,7 @@
                                 </svg>
                             </a>
                             <!-- left/previous navigation button -->
-                            <a class="fancy-slider-button-next fancy-slider-button" href="https://dp.whph.xyz/"
+                            <a class="fancy-slider-button-next fancy-slider-button" href="https://dpp.whph.xyz/"
                                 target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
                                     <g class="fancy-slider-svg-wrap">
@@ -718,23 +741,55 @@
                 </p>
             </div>
         </section>
+    </div>
+    <!-- container-END -->
 
-        <section class="content-section" data-scroll>
-            <div class="figure" style="background:blue;"></div>
-            <div class="content">
-                <header class="header">
-                    <div class="subheading">All-Old Techniques</div>
-                    <h2 class="heading">Evolved,<br />not transformed either.</h2>
-                </header>
-                <p class="paragraph">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nisi illum rem recusandae. Tempore
-                    consequuntur nihil cumque quis nam deserunt earum atque et ullam facere accusamus cum natus, autem
-                    numquam.
-                </p>
+    <!-- footer-START -->
+    <div id="footArea">
+        <!-- 100vw-text -->
+        <section class="" data-scroll>
+            <div class="cover">
+                <p class="first-parallel"></p>
+            </div>
+            <div class="cover">
+                <p class="second-parallel"></p>
             </div>
         </section>
+
+        <!-- Comment -->
+        <section class="Comment-Wrap">
+            <h2>Comments</h2>
+            <div class="comment-container" id="comment-container">
+                <!-- 댓글이 표시될 영역 -->
+            </div>
+            <hr>
+            <form id="comment-form">
+                <input type="text" id="nickname" placeholder="닉네임"><br>
+                <input type="email" id="email" placeholder="이메일"><br>
+                <textarea id="content" placeholder="내용"></textarea><br>
+                <button type="button" onclick="submitComment()">댓글 작성</button>
+            </form>
+        </section>
+
+        <!-- footer -->
+        <footer class="foot_box">
+            <div class="since">P.HaeSol <br class="w425_hide">2024<small>©</small></div>
+            <div class="foot_social" aria-label="social links">
+                <ul class="social_links">
+                    <li><a href="#" target="_blank" rel="Kakaotalk" aria-label="kakaotalk"><img
+                                src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/icon_01.png"></a></li>
+                    <li><a href="#" target="_blank" rel="Gmail" aria-label="gmail"><img
+                                src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/icon_02.png"></a></li>
+                    <li><a href="#" target="_blank" rel="Naver" aria-label="naver"><img
+                                src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/icon_03.png"></a></li>
+                    <li><a href="#" target="_blank" rel="Github" aria-label="github"><img
+                                src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/icon_04.png"></a></li>
+                </ul>
+            </div>
+            <div class="this ">© A noncommercial portfolio.</div>
+        </footer>
     </div>
-    <!-- container-START -->
+    <!-- footer-END -->
 
     <!-- top-button -->
     <a id="back-top" href="#top"><img src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/top_1.png"

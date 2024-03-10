@@ -1,4 +1,16 @@
 console.clear();
+//Cursor Custom
+function cursor__Event(){
+  const $cursor = $('.cursor');
+
+  $(window).mousemove(function(e) {
+    $cursor.css({
+      top:e.clientY - 15,
+      left:e.clientX - 15
+    });
+  });
+}
+cursor__Event();
 
 // 메뉴
 function ToggleNav__init() {
@@ -24,7 +36,19 @@ function ToggleNav__init() {
 }
 ToggleNav__init();
 
-// 스크롤
+// menu background
+$(window).scroll(function() {
+  let scrollTop = $(window).scrollTop();
+  
+  if ( scrollTop == 0 ) {
+    $('#nav .headflex').removeClass('hover');
+  }
+  else {
+    $('#nav .headflex').addClass('hover');
+  }
+});
+
+// scroll
 ScrollOut({
   cssProps: {
     visibleY: true,
@@ -198,3 +222,80 @@ var swiper = new Swiper(".swiper", {
     disableOnInteraction: false
   }
 });
+
+// textMove
+function Textmove__(){
+
+  const pTag3 = document.querySelector('.first-parallel')
+  const pTag4 = document.querySelector('.second-parallel')
+
+  const textArr3 = "Thank you for looking at my portfolio(´▽`ʃ♡ƪ)".split(' ')
+  const textArr4 = "I look forward to hearing from you(●'◡'●) ".split(' ')
+
+  let count3 = 0
+  let count4 = 0
+
+  initTexts(pTag3, textArr3)
+  initTexts(pTag4, textArr4)
+
+  function initTexts(element, textArray) {
+    textArray.push(...textArray)
+    for (let i = 0; i < textArray.length; i++) {
+      element.innerText += `${textArray[i]}\u00A0\u00A0\u00A0\u00A0`
+    }
+  }
+
+  function marqueeText(count, element, direction) {
+    if (count > element.scrollWidth / 2) {
+      element.style.transform = `translate3d(0, 0, 0)`
+      count = 0
+    }
+    element.style.transform = `translate3d(${direction * count}px, 0, 0)`
+
+    return count
+  }
+
+  function animate() {
+    count3++
+    count4++
+
+    count3 = marqueeText(count3, pTag3, -1)
+    count4 = marqueeText(count4, pTag4, 1)
+
+    window.requestAnimationFrame(animate)
+  }
+
+  function scrollHandler() {
+    count3 += 15
+    count4 += 15
+  }
+
+  window.addEventListener('scroll', scrollHandler)
+  animate()
+}  
+Textmove__();
+
+// comment
+function submitComment() {
+  var nickname = document.getElementById("nickname").value;
+  var email = document.getElementById("email").value;
+  var content = document.getElementById("content").value;
+  var date = new Date().toLocaleString(); // 현재 날짜와 시간을 가져옴
+
+  // 댓글 HTML 구성
+  var commentHTML = `
+    <div class="comment">
+      <div class="comment-header">${nickname}</div>
+      <div class="comment-body">${content}</div>
+      <div class="comment-footer">${email} - ${date}</div>
+    </div>
+  `;
+
+  // 댓글을 표시하는 영역에 추가
+  document.getElementById("comment-container").innerHTML += commentHTML;
+
+  // 입력 필드 초기화
+  document.getElementById("nickname").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("content").value = "";
+}
