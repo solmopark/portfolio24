@@ -848,7 +848,7 @@ h2 {
 }
 
 #container .folderWrap .user > * {padding:2rem;}
-#container .folderWrap .folder {transition: all 0.2s ease-in;}
+/* #container .folderWrap .folder {transition: all 0.2s ease-in;} */
 #container .folderWrap .folder__back {
     position: relative;
     width: 100px;
