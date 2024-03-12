@@ -7,40 +7,42 @@
     <title>Document</title>
     <link rel="icon" sizes="16x16" href="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/title-logo.png">
 
-    <!-- scroll -->
-    <script src="https://unpkg.com/scroll-out@2.2.2/dist/scroll-out.min.js"></script>
-    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- scroll-out -->
+    <script src="https://unpkg.com/scroll-out@2.2.2/dist/scroll-out.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
     <!-- Swiper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- lightgallery -->
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/lightgallery.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/plugins/zoom/lg-zoom.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/plugins/video/lg-video.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.5/css/lightgallery-bundle.css">
-
-    <!-- Aos -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- 테일윈드 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!--link-연결-->
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="sub.css">
-    <script defer type="text/javascript" src="index.js"></script>
-    <script defer type="text/javascript" src="gallery.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <script defer type="text/javascript" src="js/index.js"></script>
+    <script defer type="text/javascript" src="js/gallery.js"></script>
 </head>
 
 <body>
     <!--Custom-START-->
     <div class="cursor">
-        <img class="ani-1" src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/dco1.png" alt=""></div>
+        <img class="ani-1" src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/dco1.png" alt="">
+    </div>
     <!-- Custom-END -->
     <!-- Header-START -->
     <nav id="nav" class="subHeader">
@@ -120,6 +122,7 @@
                         </svg>
                     </a>
                 </div>
+            </div>
         </section>
 
         <!-- skill-1 -->
@@ -262,7 +265,7 @@
                         In the future <br />Will become.
                     </h2>
                 </header>
-                <div class="context">
+                <div class="context" data-aos="fade-in" data-aos-easing="linear" data-aos-duration="1500">
                     <p class="paragraph p_t">
                         Hello. <br>
                         I'm a new web developer.<br>
@@ -410,6 +413,7 @@
         </div>
 
         <!-- Section-3-Work -->
+
         <section id="Work" data-scroll>
             <div class="folderWrap">
                 <div class="folder-top">
@@ -418,8 +422,7 @@
                 </div>
                 <div class="forder-name"><i class="fa-regular fa-folder mr_5"></i>Work history</div>
                 <div class="user">
-                    <div class="folder gallery" id="gallery-1" data-aos="fade-up" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="1500">
+                    <div class="folder gallery" id="gallery-1" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -429,8 +432,7 @@
                         </div>
                         <p>Banner</p>
                     </div>
-                    <div class="folder gallery" id="gallery-2" data-aos="fade-up" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="1500">
+                    <div class="folder gallery" id="gallery-2" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-delay="300">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -440,8 +442,7 @@
                         </div>
                         <p>Card <br class="w375_show">News</p>
                     </div>
-                    <div class="folder gallery" id="gallery-3" data-aos="fade-up" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="1500">
+                    <div class="folder gallery" id="gallery-3" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="3000" data-aos-delay="600">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -451,8 +452,7 @@
                         </div>
                         <p>Design</p>
                     </div>
-                    <div class="folder gallery" id="gallery-4" data-aos="fade-up" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="1500">
+                    <div class="folder gallery" id="gallery-4" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="4000" data-aos-delay="900"> 
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -462,8 +462,7 @@
                         </div>
                         <p>Webzine</p>
                     </div>
-                    <div class="folder gallery" id="gallery-5" data-aos="fade-up" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="1500">
+                    <div class="folder gallery" id="gallery-5" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="5000" data-aos-delay="1200">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -473,8 +472,7 @@
                         </div>
                         <p>Event&<br class="w375_show">Popup</p>
                     </div>
-                    <div class="folder gallery" id="gallery-6" data-aos="fade-up" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="1500">
+                    <div class="folder gallery" id="gallery-6" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="6000" data-aos-delay="1500">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -484,8 +482,7 @@
                         </div>
                         <p>Renewal <br class="w375_show">design</p>
                     </div>
-                    <div class="folder gallery" id="gallery-7" data-aos="fade-up" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="1500">
+                    <div class="folder gallery" id="gallery-7"data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="7000" data-aos-delay="1800">
                         <div class="folder__back">
                             <div class="paper"></div>
                             <div class="paper"></div>
@@ -567,9 +564,10 @@
                             src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/disney.jpg">
                         <div class="swiperTbox">
                             <h2>DISNEY+ </h2>
-                            <p class="textArea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nesciunt
-                                illum debitis aliquam sint, a itaque mollitia rem deserunt nam voluptas quia sapiente
-                                saepe! Impedit nulla dolorum quo obcaecati nisi?</p>
+                            <p class="textArea">Disney+ site 리디자인 <br>
+                                메인의 구독 노출과 한정된 콘텐츠 소개로 목적이 뚜렷한 기존 사이트를 메인에 영상을 통해 스트리밍 서비스가 주는 시각적 효과와 자연스러운 구독 노출을 통하여
+                                신규 유입을 목표로 리디자인 하였습니다.
+                            </p>
                         </div>
                         <div class="move_btn">
                             <!-- right/next navigation button -->
@@ -618,9 +616,8 @@
 
                         <div class="swiperTbox">
                             <h2>PROJECT LION </h2>
-                            <p class="textArea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nesciunt
-                                illum debitis aliquam sint, a itaque mollitia rem deserunt nam voluptas quia sapiente
-                                saepe! Impedit nulla dolorum quo obcaecati nisi?</p>
+                            <p class="textArea">반응형 모작사이트<br>
+                            </p>
                         </div>
 
                         <div class="move_btn">
@@ -658,13 +655,13 @@
 
                         <div class="swiperTbox">
                             <h2>JEJUBEER</h2>
-                            <p class="textArea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nesciunt
-                                illum debitis aliquam sint, a itaque mollitia rem deserunt nam voluptas quia sapiente
-                                saepe! Impedit nulla dolorum quo obcaecati nisi?</p>
+                            <p class="textArea">반응형 모작사이트 <br>
+                                메인 페이지의 영상을 pc버전과 모바일 버전으로 나누어 작업하였습니다.</p>
                         </div>
                         <div class="move_btn">
                             <!-- right/next navigation button -->
-                            <a class="fancy-slider-button-prev fancy-slider-button" href="#" target="_blank">
+                            <a class="fancy-slider-button-prev fancy-slider-button" href="https://url.kr/e3m4t5"
+                                target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
                                     <g class="fancy-slider-svg-wrap">
                                         <g class="fancy-slider-svg-circle-wrap">
@@ -683,7 +680,7 @@
                         </div>
                     </div>
 
-                    <div class="swiper-slide ">
+                    <!-- <div class="swiper-slide ">
                         <div class="dot">
                             <span class="p_dblue"></span>
                             <span class="p_blue"></span>
@@ -701,7 +698,6 @@
                                 saepe! Impedit nulla dolorum quo obcaecati nisi?</p>
                         </div>
                         <div class="move_btn">
-                            <!-- right/next navigation button -->
                             <a class="fancy-slider-button-prev fancy-slider-button" href="https://hs.whph.xyz/"
                                 target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
@@ -716,10 +712,9 @@
                                     </g>
                                 </svg>
                             </a>
-                            <!-- left/previous navigation button -->
                             <div class="fancy-slider-button-next" style="cursor:none;"></div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -794,6 +789,13 @@
     <!-- top-button -->
     <a id="back-top" href="#top"><img src="https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/top_1.png"
             alt="">UP</a>
+
+    <!-- background-star -->
+    <section class="background-container">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="clouds"></div>
+    </section>
 </body>
 
 </html>
