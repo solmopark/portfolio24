@@ -123,25 +123,26 @@ h2 {
     margin: auto;
     left: 50%;
     top: 0.9rem;
-    position: absolute;
+    position: absolute;    
+    z-index: 50;
 }
+
+#nav .logo img{cursor: pointer;}
 
 #nav .menu li {
     font: bold 1.5rem var(--font_style);
     text-transform: uppercase;
     letter-spacing: 2px;
-    cursor: pointer;
 }
 #nav .menu > li > a{
     position:relative;
+    cursor: pointer;
     color: var(--transparent);
     -webkit-text-stroke: 0.5px var(--white);
 }
 
 #nav.active .menu {
-    visibility: visible;
-    pointer-events: painted;
-}
+    visibility: visible;}
 
 #nav .menu li.active a {
     color: var(--bg-1);  
@@ -275,8 +276,8 @@ h2 {
 }
 
 .bubble-effect-1__canvas {
-    width: 50%;
-    height: 50%;
+    /* width: 50%;
+    height: 50%; */
     display: block;
     position: absolute;
     top: 50%;
@@ -429,7 +430,7 @@ h2 {
     letter-spacing: 0.2em;
     word-spacing: 0.3em;
     text-decoration: none;
-    z-index: 15;
+    z-index: 55;
 }
 
 .link__svg {
@@ -904,7 +905,7 @@ h2 {
     padding:3rem;
 }
 
-#subContent .folderWrap .user > * {padding:2rem;}
+#subContent .folderWrap .user > * {padding:2rem; cursor: pointer;}
 #subContent .folderWrap .folder__back {
     position: relative;
     width: 100px;
@@ -1049,6 +1050,7 @@ h2 {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 /* nav */
@@ -1352,13 +1354,16 @@ h2 {
 #footArea small {font-size: var(--fs-200);}
 
 
-#footArea .social_links {
-    cursor: pointer;
+#footArea .social_links {    
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1.25rem;
+}
+#footArea .social_links >*{
+    cursor: pointer;
+    padding:10px;
 }
 .popup {
     visibility: hidden;
@@ -1406,7 +1411,7 @@ h2 {
     width:auto;
     z-index:51;
     text-align:center;
-
+    cursor: pointer;
     color:var(--white);
     font-size:var(--fs-s);
 }
@@ -1564,6 +1569,7 @@ a#back-top {
     #subContent .folderWrap .user {padding:2rem;}
     #subContent .folderWrap .folder__back{width:90px; height:60px;}
 
+    #footArea .social_links {gap: 1rem;}
     #footArea .Comment-Wrap h2 {font-size: 4rem;}
 }
 
@@ -1613,7 +1619,7 @@ a#back-top {
     #nav .headflex {height: 100%; width: 60px; right: 0;}
     #nav .logo {left: 1.5%; }
     #nav .logo img {max-width: 70%;}
-
+    
     #nav .menu li {font-size: calc(0.8rem + 0.2vw);}
     #nav .Pmenu {display: none;}
     #nav .Mmenu {display: block;}
@@ -1628,7 +1634,8 @@ a#back-top {
     /* folder-img */
     #subContent .folderWrap {margin:auto 3.5em;}
     #subContent .folderWrap .user {padding: 2rem 0;}
-
+    
+    #footArea .social_links {gap: 0.5rem;}
     #footArea .Comment-Wrap h2 {font-size: 3rem;}
 }
 
