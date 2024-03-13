@@ -12,8 +12,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-banner01.png",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Webzine main banner</h4>
-                            <p>제작 100%</p>
+                            <h4>Main banner / 제작 100% </h4>
                         </div>`
             },
             {
@@ -22,8 +21,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-banner02.png",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Webzine Subpage banner</h4>
-                            <p>제작 100%, on September 14, 2016</p>
+                            <h4>Subpage banner / 제작 100% </h4>
                         </div>`
             },
             {
@@ -32,8 +30,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-banner03.png",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Event banner</h4>
-                            <p>제작 100% May 8, 2020</p>
+                            <h4>Event banner / 제작 100% </h4>
                         </div>`
             }
         ]
@@ -54,8 +51,8 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-card01.png",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Card News</h4>
-                            <p>Description of the slide 4</p>
+                            <h4>Card News 1</h4>
+                            <p>제작 100% / 원고 제공 : 기관</p>
                         </div>`
             },
             {
@@ -64,8 +61,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-card02.png",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Card News</h4>
-                            <p>Published on November 24, 2018</p>
+                            <h4>Card News 2</h4>
                         </div>`
             },
             {
@@ -74,8 +70,8 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-card03.png",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Card News</h4>
-                            <p>Published on January 6, 2021</p>
+                            <h4>Card News 3</h4>
+                            <p> 제작 100% / 원고 제공 : 기관</p>
                         </div>`
             }
         ]
@@ -96,8 +92,8 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-design04.png",     
             subHtml: `<div class="lightGallery-captions">
-                            <h4>visual</h4>
-                            <p>Published on September 1, 2020</p>
+                            <h4>visual 1</h4>
+                            <p> 월호별 테마 제작 100% / CI 테마에 맞게 수정하여 활용 </p>
                         </div>`
             },
             {
@@ -106,8 +102,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-design05.png",     
             subHtml: `<div class="lightGallery-captions">
-                            <h4>visual</h4>
-                            <p>Published on September 1, 2020</p>
+                            <h4>visual 2</h4>
                         </div>`
             },
             {
@@ -116,8 +111,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-design06.png",     
             subHtml: `<div class="lightGallery-captions">
-                            <h4>visual</h4>
-                            <p>메인배너 제작 / 소식별 웹진 디자인 및 코딩 / 월호 발행</p>
+                            <h4>visual 3</h4>
                         </div>`
             },
             {
@@ -126,8 +120,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-design01.png",     
             subHtml: `<div class="lightGallery-captions">
-                            <h4>소식 주제별 디자인</h4>
-                            <p>Published on September 1, 2020</p>
+                            <h4>주제별 디자인 / 제작 100%</h4>
                         </div>`
             },
             {
@@ -136,8 +129,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-design02.png", 
             subHtml: `<div class="lightGallery-captions">
-                            <h4>소식 주제별 디자인</h4>
-                            <p>Published on June 19, 2019</p>
+                            <h4>주제별 디자인 / 제작 100%</h4>
                         </div>`
             },
             {
@@ -147,7 +139,7 @@ function Folder__Image(){
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-design03.png", 
             subHtml: `<div class="lightGallery-captions">
                             <h4>소식 주제별 디자인</h4>
-                            <p>Published on June 19, 2019</p>
+                            <p>제작 100% / 원고 제공 : 기관</p>
                         </div>`
             }
         ]
@@ -163,24 +155,24 @@ function Folder__Image(){
         dynamic: true,
         plugins: [lgZoom, lgVideo, lgThumbnail],
         dynamicEl: [
+            { 
+                src:
+                    "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine08.png",  
+                thumb:
+                    "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine08.png", 
+                subHtml: `<div class="lightGallery-captions">
+                                <h4>사보 활용 웹진 적용</h4>
+                                <p>웹진 코딩 / 월호 발행 / 네이버 포스팅 / 이벤트 폼 및 배너 / 애널리틱스 결과보고서 </p>
+                            </div>`
+                },
             {
             src:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine05.png",     
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine05.png",     
             subHtml: `<div class="lightGallery-captions">
-                            <h4>비주얼 웹진 적용 및 월호 발행</h4>
-                            <p>Published on September 1, 2020</p>
-                        </div>`
-            },
-            {
-            src:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine01.png",     
-            thumb:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine01.png",     
-            subHtml: `<div class="lightGallery-captions">
-                            <h4>이벤트 웹진 적용</h4>
-                            <p>Published on September 1, 2020</p>
+                            <h4>비주얼 웹진 적용</h4>
+                            <p>메인비주얼 제작 / 웹진 및 뉴스레터 코딩 / 월호 발행 / Tason 예약발행 / 카카오톡 채널 운영 등</p>
                         </div>`
             },
             {
@@ -190,27 +182,17 @@ function Folder__Image(){
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine03.png",     
             subHtml: `<div class="lightGallery-captions">
                             <h4>소식별 디자인 웹진 적용</h4>
-                            <p>메인배너 제작 / 소식별 웹진 디자인 및 코딩 / 월호 발행</p>
+                            <p>메인배너 제작 / 소식별 디자인 제작 / 웹진 코딩 / 월호 발행</p>
                         </div>`
             },
             {
             src:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine02.png",     
+                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine01.png",     
             thumb:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine02.png",     
+                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine01.png",     
             subHtml: `<div class="lightGallery-captions">
-                            <h4>컨텐츠별 PSD 제작 후 웹진 적용</h4>
-                            <p>Published on September 1, 2020</p>
-                        </div>`
-            },
-            {
-            src:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine04.png",  
-            thumb:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine04.png", 
-            subHtml: `<div class="lightGallery-captions">
-                            <h4>컨텐츠별 PSD 제작 후 웹진 적용</h4>
-                            <p>Published on June 19, 2019</p>
+                            <h4>이벤트 웹진 적용</h4>
+                            <p>이벤트 기획안 및 포스터 제작</p>
                         </div>`
             },
             {
@@ -220,27 +202,38 @@ function Folder__Image(){
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine06.png", 
             subHtml: `<div class="lightGallery-captions">
                             <h4>컨텐츠별 PSD 제작 후 웹진 적용</h4>
-                            <p>Published on June 19, 2019</p>
+                            <p> 카드뉴스 3건 / 웹진작업 / 격월 발행</p>
+                        </div>`
+            },
+            
+            {
+                src:
+                    "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine07.png",  
+                thumb:
+                    "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine07.png", 
+                subHtml: `<div class="lightGallery-captions">
+                                <h4>사보 활용 웹진 적용</h4>
+                                <p>카드뉴스 1건 / 웹진작업 / 월호 발행</p>
+                            </div>`
+                },
+            {
+            src:
+                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine02.png",     
+            thumb:
+                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine02.png",     
+            subHtml: `<div class="lightGallery-captions">
+                            <h4>컨텐츠별 PSD 제작 후 웹진 적용</h4>
+                            <p> PSD제작 / 웹진작업</p>
                         </div>`
             },
             {
             src:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine07.png",  
+                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine04.png",  
             thumb:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine07.png", 
+                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine04.png", 
             subHtml: `<div class="lightGallery-captions">
                             <h4>컨텐츠별 PSD 제작 후 웹진 적용</h4>
-                            <p>Published on June 19, 2019</p>
-                        </div>`
-            },
-            {
-            src:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine08.png",  
-            thumb:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-webzine08.png", 
-            subHtml: `<div class="lightGallery-captions">
-                            <h4>컨텐츠별 PSD 제작 후 웹진 적용</h4>
-                            <p>Published on June 19, 2019</p>
+                            <p>PSD제작 / 웹진작업</p>
                         </div>`
             },
         ]
@@ -262,7 +255,6 @@ function Folder__Image(){
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-plan01.png",     
             subHtml: `<div class="lightGallery-captions">
                             <h4>이벤트 기획안</h4>
-                            <p>Published on September 1, 2020</p>
                         </div>`
             },
             {
@@ -272,7 +264,7 @@ function Folder__Image(){
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-event02.png",     
             subHtml: `<div class="lightGallery-captions">
                             <h4>이벤트 기획안 -> 디자인적용</h4>
-                            <p>Published on September 1, 2020</p>
+                            <p>포스터 및 SNS 사이즈 / 당첨자 발표 등 </p>
                         </div>`
             },
             {
@@ -282,7 +274,7 @@ function Folder__Image(){
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-event01.jpg",     
             subHtml: `<div class="lightGallery-captions">
                             <h4>만족도 조사 이벤트</h4>
-                            <p></p>
+                            <p>팝업 제작 100%</p>
                         </div>`
             },
             {
@@ -291,8 +283,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-popup01.jpg",     
             subHtml: `<div class="lightGallery-captions">
-                            <h4>구독신청 팝업</h4>
-                            <p>Published on September 1, 2020</p>
+                            <h4>구독신청 팝업 / 제작 100% </h4>
                         </div>`
             },
             {
@@ -301,8 +292,7 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-popup02.jpg", 
             subHtml: `<div class="lightGallery-captions">
-                            <h4>컨텐츠 종료 알림 팝업</h4>
-                            <p>Published on June 19, 2019</p>
+                            <h4>컨텐츠 종료 알림 팝업 / 제작 100% </h4>
                         </div>`
             },
         ]
@@ -325,7 +315,7 @@ function Folder__Image(){
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-re01.png", 
             subHtml: `<div class="lightGallery-captions">
                             <h4>Newsletter Renewal</h4>
-                            <p>Published on June 19, 2019</p>
+                            <p> NEWLETTER 시안 3종</p>
                         </div>`
             },
             {
@@ -335,7 +325,7 @@ function Folder__Image(){
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-re02.png",     
             subHtml: `<div class="lightGallery-captions">
                             <h4>Webzine Renewal</h4>
-                            <p>Published on September 1, 2020</p>
+                            <p>환경 관련 웹진 리뉴얼 시안 2종</p>
                         </div>`
             },
             {
@@ -344,8 +334,8 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-e-mail.png",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Email Signature</h4>
-                            <p>Published on June 19, 2019</p>
+                            <h4>E-mail Signature</h4>
+                            <p>전자메일 서명 시안 6종</p>
                         </div>`
             },
         ]
@@ -367,8 +357,17 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster01.jpg",     
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Poster</h4>
-                            <p>Published on September 1, 2020</p>
+                            <h4>2022 Poster</h4>
+                        </div>`
+            },
+            {
+            src:
+                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster04.png",
+            thumb:
+                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster04.png",
+            subHtml: `<div class="lightGallery-captions">
+                            <h4>Pop art</h4>
+                            <p>Coca-Cola Starders</p>
                         </div>`
             },
             {
@@ -377,8 +376,8 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster02.jpg", 
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Poster</h4>
-                            <p>Published on June 19, 2019</p>
+                            <h4>Move Poster 1</h4>
+                            <p>악마를 보았다(I saw the devil)</p>
                         </div>`
             },
             {
@@ -387,18 +386,8 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster03.jpg",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Poster</h4>
-                            <p>Published on June 19, 2019</p>
-                        </div>`
-            },
-            {
-            src:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster04.png",
-            thumb:
-                "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster04.png",
-            subHtml: `<div class="lightGallery-captions">
-                            <h4>Poster</h4>
-                            <p>Published on October 6, 2020</p>
+                            <h4>Move Poster 2</h4>
+                            <p>악마를 보았다(I saw the devil)</p>
                         </div>`
             },
             {
@@ -407,8 +396,8 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster05.jpg",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Poster</h4>
-                            <p>Published on October 6, 2020</p>
+                            <h4>Move Poster 3</h4>
+                            <p>마녀 파트2(The witch part2)</p>
                         </div>`
             },
             {
@@ -417,8 +406,8 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster06.jpg",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Poster</h4>
-                            <p>Published on October 6, 2020</p>
+                            <h4>Move Poster 4</h4>
+                            <p>마녀 파트2(The witch part2)</p>
                         </div>`
             },
             {
@@ -427,8 +416,8 @@ function Folder__Image(){
             thumb:
                 "https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/img-poster07.png",
             subHtml: `<div class="lightGallery-captions">
-                            <h4>Poster</h4>
-                            <p>Published on October 6, 2020</p>
+                            <h4>Event banners and posters</h4>
+                            <p>카페 행사 포스터</p>
                         </div>`
             }
         ]

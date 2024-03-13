@@ -1,4 +1,26 @@
 console.clear();
+// loding style
+// function Loding__ing() {
+//   const loader = document.querySelector("#loding");
+//   const html = document.querySelector("html");
+
+//   html.style.overflow = "hidden"; //로딩 중 스크롤 방지
+
+//   window.addEventListener("load", () => {
+//     setTimeout(() => {
+//       //로딩속도 구현
+
+//       loader.style.opacity = "0";
+//       html.style.overflow = "auto"; //스크롤 방지 해제
+
+//       setTimeout(() => {
+//         loader.style.display = "none";
+//       }, 400);
+//     }, 4000);
+//   });
+// }
+// Loding__ing();
+
 //Cursor Custom
 function cursor__Event(){
   const $cursor = $('.cursor');
@@ -12,7 +34,6 @@ function cursor__Event(){
 }
 cursor__Event();
 
-// 메뉴
 // 메뉴
 function ToggleNav__init() {
   var nav = document.getElementById("nav");
@@ -37,6 +58,19 @@ function ToggleNav__init() {
 }
 ToggleNav__init();
 
+// 메뉴 백그라운드
+$(window).scroll(function() {
+  let scrollTop = $(window).scrollTop();
+  
+  if ( scrollTop == 0 ) {
+    $('#nav .headflex').removeClass('hover');
+  }
+  else {
+    $('#nav .headflex').addClass('hover');
+  }
+});
+
+
 // 스크롤
 ScrollOut({
   cssProps: {
@@ -46,8 +80,6 @@ ScrollOut({
 });
 
 Splitting({ target: ".heading" });
-
-
 
 // 버블효과
 function BubbleEffect1__init(canvasWidth, canvasHeight) {
@@ -290,3 +322,42 @@ function submitComment() {
   document.getElementById("email").value = "";
   document.getElementById("content").value = "";
 }
+
+// email copy
+function E_mail__Copy() {
+  // naver mail url 
+  document.getElementById("nmailImg").addEventListener("click", function () {
+    var email = "haesol_97@naver.com";
+    copyToClipboard(email);
+    showPopupMessage("이메일 주소가 복사되었습니다.");
+  });
+
+  // google mail url 
+  document.getElementById("gmailImg").addEventListener("click", function () {
+    var email = "haegol.p@gmail.com";
+    copyToClipboard(email);
+    showPopupMessage("이메일 주소가 복사되었습니다.");
+  });
+
+  function copyToClipboard(text) {
+    var input = document.createElement("input");
+    input.style.position = "fixed";
+    input.style.opacity = 0;
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+  }
+
+  function showPopupMessage(message) {
+    var popup = document.getElementById("popupMsg");
+    var popupText = document.getElementById("popupText");
+    popupText.innerHTML = message;
+    popup.classList.add("show");
+    setTimeout(function () {
+      popup.classList.remove("show");
+    }, 2000);
+  }
+}
+E_mail__Copy();
