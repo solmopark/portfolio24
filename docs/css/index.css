@@ -6,6 +6,21 @@ body {
     font: 2.6rem/1.55 var(--font_k);
 }
 
+::-webkit-scrollbar {
+    width: 6px;  /* 스크롤바의 너비 */
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 10%; /* 스크롤바의 길이 */
+    background: var(--bg-1); /* 스크롤바의 색상 */
+    border-radius: 99px;
+}
+
+::-webkit-scrollbar-track {
+    background:var(--black);  /*스크롤바 뒷 배경 색상*/
+}
+
 h2 {
     font: 2.8rem var(--font_style);
     text-transform: uppercase;
@@ -14,20 +29,23 @@ h2 {
 }
 
 /*------- Loding-start -------*/
-/*------- Loding-end -------*/
-#loding{
-    width: 100vw;
-    height:100vh;
-    background:var(--black);
-    font-size: 1rem;
+#loading{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height:100%;
+    background:var(--black);    
+    z-index: 55;
 }
-#loding .lode {
+#loading .loade {
     position: relative;
     top: 42%;
-    display:flex;
+    font-size: 1rem;
+    text-align: center;
+    /* display:flex;
     flex-flow:column;
     justify-content:center;
-    align-items: center;
+    align-items: center; */
 }
 
 .blob-3 {
@@ -52,11 +70,15 @@ h2 {
 @keyframes b3 {
     100%  {background-position:50% -20px,-20px 50%,60px 50%,50% 60px,50%,50%,50%}
 }
+
+
+/*------- Loding-end -------*/
+
 /*------- Cursor-Custom-START -------*/
 * {cursor:none;}
 
 .cursor {
-    z-index:1000;
+    z-index:99;
     width:30px;
     height:30px;
     border-radius:50%;
@@ -87,7 +109,7 @@ h2 {
 /*------- header-menu-star -------*/
 #nav {
     /* mix-blend-mode: difference; 요소 혼합 모드 */
-    z-index: 100;
+    z-index: 50;
     position: relative;
 }
 #nav .headflex{height:80px; position:fixed; width:100%; background:rgba(0,0,0,0);}
@@ -108,6 +130,7 @@ h2 {
     font: bold 1.5rem var(--font_style);
     text-transform: uppercase;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 #nav .menu > li > a{
     position:relative;
@@ -117,7 +140,7 @@ h2 {
 
 #nav.active .menu {
     visibility: visible;
-    pointer-events: pointer;
+    pointer-events: painted;
 }
 
 #nav .menu li.active a {
@@ -1098,6 +1121,80 @@ h2 {
 }
 /*------- 3d-swiper-end -------*/
 
+/*------- accordionr-start -------*/
+#subContent .content.self_ {
+    display:flex;
+    flex-flow: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#subContent .content.self_ > .header {text-align: end;}
+#subContent .accordion {
+    width: 50%;
+    margin: auto 0;
+    overflow: scroll;   
+    padding:0 20px; 
+}
+.accordion::-webkit-scrollbar-thumb{ height: 15%; background-color: var(--white); border-radius: 100px; }
+.accordion::-webkit-scrollbar-track {background: rgba(0, 0, 0, 0); }
+
+#subContent .accordion li:first-child {
+    border-top: 1px solid var(--white);
+}
+#subContent .accordion li {
+    border-bottom: 1px solid var(--white);
+    position: relative;
+}
+#subContent .accordion li p {
+    display: none;
+    padding: 10px 20px 20px;
+    color:var(--white);
+}
+#subContent .accordion .title {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    line-height: 3;
+    font-size: 1.5rem;
+    font-family: "SBAggroL";
+    text-indent: 15px;
+    user-select: none;
+}
+#subContent .accordion .title:after {    
+    background: url('https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/ac_arrow.png') no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 40px;
+    position: absolute;
+    content: " ";
+    top: 10px;
+    right: 30px;
+    transform: rotate(-270deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+#subContent .accordion p {
+    font-size: 1.15rem;
+    line-height: 2;
+    padding: 10px;
+    word-break: break-all;
+}
+
+#subContent .accordion .title.active:after {
+    transform: rotate(-180deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    filter: var(--ft-1);
+}
+
+#subContent .accordion .title.active{
+    color:var(--bg-1);
+}
+/*------- accordionr-end -------*/
+
 /*------- cover-start -------*/
 #footArea .cover_text {
     width: 100vw;
@@ -1256,6 +1353,7 @@ h2 {
 
 
 #footArea .social_links {
+    cursor: pointer;
     position: relative;
     display: flex;
     justify-content: center;
@@ -1306,7 +1404,7 @@ h2 {
     bottom: 5%; 
     right:10px; 
     width:auto;
-    z-index:100;
+    z-index:51;
     text-align:center;
 
     color:var(--white);
@@ -1440,6 +1538,11 @@ a#back-top {
     #Portfolio .con_hover::before{width: 280px; height: 280px;}
     #Portfolio .context {font-size:1.2rem}
 
+    /* accordion */
+    #subContent .accordion .title {font-size: 1.35rem;}
+    #subContent .accordion li p {padding: 10px 17px 20px;}
+    #subContent .accordion p {font-size: 1.1rem;}
+
     /* folder-img */
     #subContent .folderWrap{width:1250px;}
 }
@@ -1487,6 +1590,17 @@ a#back-top {
     #Portfolio .con_hover {left: calc(74vw - 50px); bottom: calc(30vh - 20px);}
     #Portfolio .con_hover::after {top:20px; left: -130px; width: 50px; height: 50px}
     #Portfolio .con_hover::before{top:-24px; left:-80px; width: 220px; height: 220px;}
+    
+    /* accordion */
+    #subContent .content.self_ {flex-flow: column; justify-content: space-around;}
+    #subContent .content.self_ > .header {text-align: center;}
+    #subContent .accordion {width: 90%; margin: 0 auto; padding: 0 20px 30px;}
+    .accordion::-webkit-scrollbar-thumb{ height: 5%; }
+    #subContent .accordion .title {font-size: 1.25rem;}
+    /* #subContent .accordion .title.active:after {top:0;} */
+    #subContent .accordion .title:after {top:5px;}
+    #subContent .accordion li p {padding: 0 17px 15px; font-size: 1rem;}
+    
 
     /* folder-img */
     #subContent .folderWrap {margin:auto 5em;}
@@ -1504,6 +1618,12 @@ a#back-top {
     #nav .Pmenu {display: none;}
     #nav .Mmenu {display: block;}
     .nav-icon {display: block;}
+
+    /* accordion */
+    #subContent .accordion {width: 100%;}
+    #subContent .accordion .title {font-size: 1.1rem;}
+    #subContent .accordion .title.active:after {width: 15px; height: 28px;}
+    #subContent .accordion li p {font-size: 0.9rem; line-height: 1.5;}
 
     /* folder-img */
     #subContent .folderWrap {margin:auto 3.5em;}
@@ -1597,6 +1717,11 @@ a#back-top {
     #Portfolio .con_hover::before {top:-20px; left:-60px; width:170px; height: 170px;}
     #Portfolio .con_hover::after {top:20px; left:-105px; width:50px; height: 50px;}
 
+     /* accordion */
+    #subContent .content.self_ {justify-content: space-evenly;}
+    #subContent .accordion .title {font-size: 1.05rem;}
+    #subContent .accordion li p {font-size: 0.85rem;}
+
     /* folder-img */
     #subContent .folderWrap .user >* {padding:1rem;}
     #subContent .folderWrap .folder__back {width:70px; height:50px;}
@@ -1611,6 +1736,11 @@ a#back-top {
     #nav .logo {top: 0.8rem;}
     #nav .logo img {max-width: 60%;}
     #nav .menu li {font-size: calc(0.7rem + 0.2vw);}
+    
+    .nav-icon {top: 10px; right: 10px;}
+    #nav .headflex {width: 50px;}
+    #nav .Mmenu {top:50px; right: -14px;}
+
 
     /* intro-section */
     #subContent .minArea {padding: 1em 1.5rem 0;}
@@ -1677,6 +1807,9 @@ a#back-top {
 
     /* 3d-swiper */
     #subContent .swiper .swiper-slide {width: 280px; height: 400px;}
+
+    #subContent .accordion .title {font-size: 0.9rem;}
+    #subContent .accordion li p {font-size: 0.8rem;}
 
     /* footer */
     #footArea .Comment-Wrap h2 {font-size: 2.15rem;}

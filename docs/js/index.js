@@ -1,25 +1,30 @@
 console.clear();
-// loding style
-// function Loding__ing() {
-//   const loader = document.querySelector("#loding");
-//   const html = document.querySelector("html");
 
-//   html.style.overflow = "hidden"; //로딩 중 스크롤 방지
 
-//   window.addEventListener("load", () => {
-//     setTimeout(() => {
-//       //로딩속도 구현
+// loading style
+function Loader__ing() {
+  const loader = document.querySelector("#loading");
+  const html = document.querySelector("html");
 
-//       loader.style.opacity = "0";
-//       html.style.overflow = "auto"; //스크롤 방지 해제
+  html.style.overflow = "hidden"; //로딩 중 스크롤 방지
 
-//       setTimeout(() => {
-//         loader.style.display = "none";
-//       }, 400);
-//     }, 4000);
-//   });
-// }
-// Loding__ing();
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      //로딩속도 구현
+
+      loader.style.opacity = "0";
+      html.style.overflow = "auto"; //스크롤 방지 해제
+
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 400);
+      AOS.init();
+    }, 1500);
+  });
+}
+Loader__ing();
+
+
 
 //Cursor Custom
 function cursor__Event(){
@@ -245,6 +250,28 @@ var swiper = new Swiper(".swiper", {
     disableOnInteraction: false
   }
 });
+
+// Accordion
+(function($) {
+  $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
+
+  $('.accordion .title').click(function(j) {
+      var dropDown = $(this).closest('li').find('p');
+
+      $(this).closest('.accordion').find('p').not(dropDown).slideUp();
+
+      if ($(this).hasClass('active')) {
+          $(this).removeClass('active');
+      } else {
+          $(this).closest('.accordion').find('.title.active').removeClass('active');
+          $(this).addClass('active');
+      }
+
+      dropDown.stop(false, true).slideToggle();
+
+      j.preventDefault();
+  });
+})(jQuery);
 
 // textMove
 function Textmove__(){
