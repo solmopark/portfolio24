@@ -905,7 +905,7 @@ h2 {
     padding:3rem;
 }
 
-#subContent .folderWrap .user > * {padding:2rem; cursor: pointer;}
+#subContent .folderWrap .user > * {padding:2rem;}
 #subContent .folderWrap .folder__back {
     position: relative;
     width: 100px;
