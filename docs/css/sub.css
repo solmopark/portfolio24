@@ -76,7 +76,7 @@
 /* ------------ root ------------ */
 :root {
     /* font */
-    --fs-xl: clamp(3.2rem, 12vw, 18rem);
+    --fs-xl: clamp(2.8rem, 12vw, 18rem);
     --fs-l: clamp(2.5rem, 5vw, 7rem);
     --fs-m: clamp(1rem, 2.5vw, 2rem);
     --fs-sm: clamp(0.9rem, 2vw, 1.5rem);

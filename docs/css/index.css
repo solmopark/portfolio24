@@ -340,7 +340,7 @@ h2 {
 
 #subContent .minArea .minbox .text:nth-child(1):after {
     background-image: url("https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/dco_star2.png");
-    bottom: -50px;
+    bottom: -100px;
     left: 0;
 }
 @-webkit-keyframes blink {
@@ -353,7 +353,7 @@ h2 {
 }
 #subContent .minArea .minbox .text:nth-child(2):after {
     background-image: url("https://cdn.jsdelivr.net/gh/solmopark/portfolio24/docs/img/dco_star2.png");
-    top: -40px;
+    top: -80px;
     right: 0;
 }
 
@@ -361,8 +361,8 @@ h2 {
     content: "";
     background-size: cover;
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 130px;
+    height: 130px;
     -moz-animation: blink 0.8s ease-in-out infinite alternate;
     animation: blink 0.8s ease-in-out infinite alternate;
 }
@@ -1543,9 +1543,8 @@ a#back-top {
 
 @media only screen and (max-width: 1440px) {
     /* intro-section */
-    #subContent .homeArea .homebox {
-        font-size: calc(6.5rem + 0.390625vw);
-    }
+    #subContent .homeArea .homebox {font-size: calc(6.5rem + 0.390625vw);}   
+    #subContent .minArea .minbox .text:after {width: 100px; height: 100px;}
     /* skill */
     #roll-text .track .text .box::before {top:35%;}
 
@@ -1596,6 +1595,9 @@ a#back-top {
 
     /* intro-section */
     #subContent .minArea {padding: 1em 1em 0;}
+    #subContent .minArea .minbox .text:after {width: 60px; height: 60px;}
+    #subContent .minArea .minbox .text:nth-child(1):after {bottom:-50px;}
+    #subContent .minArea .minbox .text:nth-child(2):after {top:-40px;}
     #subContent .minArea .mintext .txt{width:40%;}
     .link {width: 9rem; height: 9rem;}
     
@@ -1768,7 +1770,10 @@ a#back-top {
 
     /* intro-section */
     #subContent .minArea {padding: 1em 1.5rem 0;}
-    #subContent .minArea .minbox > * {line-height: 1.5;}
+    #subContent .minArea .minbox > *:nth-child(-n+2) {line-height: 1.5; text-align: center;}
+    #subContent .minArea .minbox .text:nth-child(1):after {bottom: -50px; left: -20px;}
+    #subContent .minArea .minbox .text:nth-child(2):after {top: -100px; right: -20px;}
+    
     
     /* content */
     .content > .header {justify-content: center;}
@@ -1804,7 +1809,11 @@ a#back-top {
 
 @media only screen and (max-width: 375px){
     .w375_show {display: block;}
-
+    
+    /* intro-section */
+    #subContent .minArea .minbox .text:after {width: 30px; height: 30px;}
+    #subContent .minArea .minbox .text:nth-child(1):after {bottom: -20px; left: -20px;}
+    #subContent .minArea .minbox .text:nth-child(2):after {top: -80px; right: -20px;}
     /* content */
     #Portfolio .con_hover {font-size: 0.9rem; left: calc(72vw - 50px); bottom: calc(46vh - 20px);}
     #Portfolio .con_hover::before {top: -14px; left: -47px;}
@@ -1821,8 +1830,6 @@ a#back-top {
 }
 
 @media only screen and (max-width: 350px) {
-    /* intro-section */
-    #subContent .minArea .minbox .text:after {width: 30px; height: 30px;}
 
     /* content */
     .header .heading{font-size: 3.45em;}
