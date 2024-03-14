@@ -1135,11 +1135,11 @@ h2 {
 #subContent .accordion {
     width: 50%;
     margin: auto 0;
-    overflow: scroll;   
+    overflow: auto;   
     padding:0 20px; 
 }
 .accordion::-webkit-scrollbar-thumb{ height: 15%; background-color: var(--white); border-radius: 100px; }
-.accordion::-webkit-scrollbar-track {background: rgba(0, 0, 0, 0); }
+.accordion::-webkit-scrollbar-track {background: rgba(0, 0, 0, 0.1); }
 
 #subContent .accordion li:first-child {
     border-top: 1px solid var(--white);
@@ -1152,6 +1152,7 @@ h2 {
     display: none;
     padding: 10px 20px 20px;
     color:var(--white);
+    letter-spacing: -0.02rem;
 }
 #subContent .accordion .title {
     width: 100%;
@@ -1565,6 +1566,11 @@ a#back-top {
     /* content */
     #Portfolio .con_hover {left: calc(75vw - 50px); bottom: calc(36vh - 20px); }
     
+    /* accordion */
+    #subContent .accordion {width:100%;}
+    .heading {font-size: 4.3em;}
+    .accordion::-webkit-scrollbar-thumb{ height: 5%; }
+    
     /* folder-img*/
     #subContent .folderWrap .user {padding:2rem;}
     #subContent .folderWrap .folder__back{width:90px; height:60px;}
@@ -1601,7 +1607,6 @@ a#back-top {
     #subContent .content.self_ {flex-flow: column; justify-content: space-around;}
     #subContent .content.self_ > .header {text-align: center;}
     #subContent .accordion {width: 90%; margin: 0 auto; padding: 0 20px 30px;}
-    .accordion::-webkit-scrollbar-thumb{ height: 5%; }
     #subContent .accordion .title {font-size: 1.25rem;}
     /* #subContent .accordion .title.active:after {top:0;} */
     #subContent .accordion .title:after {top:5px;}
