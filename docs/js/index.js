@@ -17,9 +17,9 @@ function Loader__ing() {
 
       setTimeout(() => {
         loader.style.display = "none";
-      }, 400);
+      }, 300);
       AOS.init();
-    }, 1500);
+    }, 1000);
   });
 }
 Loader__ing();
