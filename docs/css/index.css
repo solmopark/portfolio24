@@ -4,6 +4,7 @@ body {
     background: var(--black);
     color: var(--white);
     font: 2.6rem/1.55 var(--font_k);
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -1398,6 +1399,16 @@ h2 {
 #footArea .this {
     font-size: var(--fs-200);
 }
+
+#footArea .footer_B {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #ababab;
+    font-family: var(--font_k);
+    font-weight: 100;
+    margin:3rem 0;
+}
+
 /*------- footer-end -------*/
 
 
@@ -1692,6 +1703,7 @@ a#back-top {
     #footArea .foot_box >* {margin-bottom:2.5rem;}
     #footArea .foot_box >*:last-child {margin-bottom:0;}
     #footArea .since {text-align:center;}
+    #footArea .footer_B {margin:4rem 0 2rem;}
     .popup {bottom:5%;}
 }
 
@@ -1825,6 +1837,7 @@ a#back-top {
 
     /* footer */
     #footArea .Comment-Wrap h2 {font-size: 2.15rem;}
+    #footArea .footer_B {font-size: 0.8rem; letter-spacing: -0.02rem;}
 }
 
 /*------- @media-end -------*/

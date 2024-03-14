@@ -228,24 +228,35 @@
     #subContent .textArea2 {font-size: 1.3rem;}
 }
 @media only screen and (max-width: 1024px) {
+    .w1024_show {display: block;}
     #subContent .textArea2 {font-size: 1.2rem;}
 }
 @media only screen and (max-width: 768px) {
     #subContent .titleArea {font-size: 2rem;}
     #subContent .textArea {font-size: 1rem;}
     #subContent .textArea2 {font-size: 1.1rem;}
+
+    
+    .w768_show {display: block;}
 }
 
 @media only screen and (max-width: 600px) {
     #subContent .textArea1 {font-size: 0.8rem;}
+    
 }
 
 @media only screen and (max-width: 425px) {
+    
+    .w425_show {display: block;}
+
     #subContent .textArea{font-size:0.85rem;}
     #subContent .textArea2 {font-size: 1rem;}
 }
 
 @media only screen and (max-width: 375px) {
+    
+    .w375_show {display: block;}
+
     #subContent .textArea1 {font-size:0.8rem; margin-top: 3px;}
 }
 
