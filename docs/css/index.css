@@ -1361,6 +1361,7 @@ h2 {
     right: 0px;
     top: 0;
     padding: 4px 10px;
+    font-size: var(--fs-200);
 }
 
 #footArea .comment-container div .delete:hover {

@@ -390,7 +390,7 @@ function Comment__Box() {
     comments.forEach((commentObj, index) => {
       if (index < visibleComments) {
         const newCommentList = document.createElement("div");
-        const defaultComment = `<span class="name">${commentObj.nickname}</span><span class="email">(${commentObj.email})</span>: <strong>${commentObj.context}</strong> <span class="time">(${commentObj.time})</span><button class="delete" onclick="deleteComment(this.parentNode)">삭제</button>`;
+        const defaultComment = `<span class="name">${commentObj.nickname}</span><span class="email">(${commentObj.email})</span> <br> <strong>${commentObj.context}</strong> <span class="time">(${commentObj.time})</span><button class="delete" onclick="deleteComment(this.parentNode)">삭제</button>`;
         newCommentList.innerHTML = defaultComment;
         commentWrapper.appendChild(newCommentList);
       }
