@@ -326,29 +326,101 @@ function Textmove__(){
 Textmove__();
 
 // comment
-function submitComment() {
-  var nickname = document.getElementById("nickname").value;
-  var email = document.getElementById("email").value;
-  var content = document.getElementById("content").value;
-  var date = new Date().toLocaleString(); // 현재 날짜와 시간을 가져옴
+function Comment__Box() {
+  const nicknameInput = document.getElementById("nickname");
+  const emailInput = document.getElementById("email");
+  const commentInput = document.getElementById("context");
+  const commentSubmit = document.querySelector("button[type='button']");
+  const showMoreBtn = document.getElementById("show-more-btn");
 
-  // 댓글 HTML 구성
-  var commentHTML = `
-    <div class="comment">
-      <div class="comment-header">${nickname}</div>
-      <div class="comment-body">${content}</div>
-      <div class="comment-footer">${email} - ${date}</div>
-    </div>
-  `;
+  let comments = [];
+  let visibleComments = 3; // 초기에 보여지는 댓글 수
 
-  // 댓글을 표시하는 영역에 추가
-  document.getElementById("comment-container").innerHTML += commentHTML;
+  function submitComment() {
+    const nickname = nicknameInput.value.trim(); // 닉네임에서 앞뒤 공백을 제거합니다.
+    const email = emailInput.value.trim(); // 이메일에서 앞뒤 공백을 제거합니다.
+    const newComment = commentInput.value.trim(); // 입력값에서 앞뒤 공백을 제거합니다.
+    
+    if (nickname.length === 0 || email.length === 0 || newComment.length === 0) {
+      alert("댓글을 작성하셨습니!🥰");
+    } else {
+      addComment(nickname, email, newComment);
+      saveComments();
+    }
+    event.preventDefault();
+  }
 
-  // 입력 필드 초기화
-  document.getElementById("nickname").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("content").value = "";
+  function addComment(nickname, email, context) {
+    const commentLists = document.getElementById("comment-container");
+    const newCommentList = document.createElement("div");
+    const currentTime = new Date().toLocaleString();
+    const defaultComment = `<span class="name">${nickname}</span><span class="email">(${email})</span>: <strong>${context}</strong> <span class="time">(${currentTime})</span><button class="delete" onclick="deleteComment(this.parentNode)">삭제</button>`;
+
+    newCommentList.innerHTML = defaultComment;
+    commentLists.appendChild(newCommentList);
+
+    const commentObj = {
+      nickname: nickname,
+      email: email,
+      context: context,
+      time: currentTime
+    };
+
+    comments.push(commentObj);
+    commentInput.value = "";
+    nicknameInput.value = "";
+    emailInput.value = "";
+
+    if (comments.length > visibleComments) {
+      showMoreBtn.classList.remove('hidden');
+    }
+  }
+
+  function deleteComment(commentNode) {
+    const commentContainer = document.getElementById("comment-container");
+    const indexToDelete = Array.from(commentContainer.children).indexOf(commentNode);
+    commentContainer.removeChild(commentNode);
+    comments.splice(indexToDelete, 1); // 삭제된 댓글 배열에서 제거
+    saveComments();
+  }
+
+  function loadComments() {
+    const commentWrapper = document.getElementById("comment-container");
+    commentWrapper.innerHTML = "";
+    comments.forEach((commentObj, index) => {
+      if (index < visibleComments) {
+        const newCommentList = document.createElement("div");
+        const defaultComment = `<span class="name">${commentObj.nickname}</span><span class="email">(${commentObj.email})</span>: <strong>${commentObj.context}</strong> <span class="time">(${commentObj.time})</span><button class="delete" onclick="deleteComment(this.parentNode)">삭제</button>`;
+        newCommentList.innerHTML = defaultComment;
+        commentWrapper.appendChild(newCommentList);
+      }
+    });
+  }
+
+  function saveComments() {
+    localStorage.setItem("comments", JSON.stringify(comments));
+  }
+
+  function showMoreComments() {
+    visibleComments += 3;
+    loadComments();
+    if (visibleComments >= comments.length) {
+      showMoreBtn.classList.add('hidden');
+    }
+  }
+
+  const init = () => {
+    commentSubmit.addEventListener("click", submitComment);
+    window.addEventListener("load", () => {
+      comments = JSON.parse(localStorage.getItem("comments")) || [];
+      loadComments();
+    });
+  };
+
+  init();
 }
+Comment__Box();
+
 
 // email copy
 function E_mail__Copy() {

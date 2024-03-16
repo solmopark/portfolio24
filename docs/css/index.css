@@ -1267,27 +1267,147 @@ h2 {
     text-align:start;
     word-wrap: break-word;
 }
-#footArea .comment {
-    margin-bottom: 10px;
-    border-bottom: 1px dotted var(--white);
-    padding-bottom: 15px;
+#footArea .Comment-Wrap {
+    color: var(--white);
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem 0;
 }
-#footArea .comment:last-child {
+#footArea .Comment-Wrap h2 {
+    width: 100%;
+    color: var(--bg-1);
+    margin-bottom: 1rem;
+    font-size: 4.5rem;
+}
+#footArea .Comment-Wrap hr {
+    width: 20%;
+    margin: 0 auto;
+}
+
+#footArea .comment-container {
+    width: 54.5%;
+    margin: 30px auto ;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 1px solid;
+    color: var(--white);
+    text-align: start;
+    word-wrap: break-word;
+    position: relative;
+}
+
+#footArea #show-more-btn {
+    background-color: var(--bg-1);
+    color: var(--white);
+    border: none;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 92px;
+    position: absolute;
+    bottom: -5%;
+    right: 22.8%;
+}
+#footArea #show-more-btn:hover {
+    background-color: #669fcb;
+}
+#footArea .comment-container div {
+    text-align: start;
+    font-size: var(--fs-s);
+    position: relative;    
+    margin: 20px 0;
+    border-bottom: 1px dotted var(--white);
+}
+#footArea .comment-container div:last-child {
     border-bottom: none;
 }
-#footArea .comment-header {
-    font-weight: bold;
-    margin-bottom: 5px;
-    font-size: var(--fs-200);
+#footArea .comment-container div .name,
+#footArea .comment-container div .email {
+    display: inline-block;
+/*   font-weight: bold; */
+    margin: 0 5px 10px 0;
 }
-#footArea .comment-body {
-    margin-bottom: 5px; 
-    font-size: var(--fs-300);
+
+#footArea .comment-container div .email {font-weight: 100;}
+
+#footArea .comment-container div .context {
+    display:block;
 }
-#footArea .comment-footer {
+
+#footArea .comment-container div .time {
     font-size: 12px;
     color: #c8c8c8;
+    text-align: end;
+    display: block;
+    margin-bottom: 10px;
 }
+
+#footArea .comment-container div:last-child .time{margin-bottom: 0;}
+
+#footArea .comment-container div .delete {
+    color: #c8c8c8;
+    background: transparent;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    padding: 4px 10px;
+}
+
+#footArea .comment-container div .delete:hover {
+    color: #ff0000; /* 삭제 버튼에 호버되었을 때의 글꼴 색상을 변경합니다. */
+}
+
+#footArea #comment-form {
+    width: 60%;
+    margin: 30px auto;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    font-size: var(--fs-200);
+    color: var(--white);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+#footArea #comment-form input[type="text"],
+#footArea #comment-form input[type="email"],
+#footArea #comment-form textarea {
+    width: calc(100% - 10px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0);
+    font-size: var(--fs-s);
+}
+#footArea #comment-form textarea {
+    height: 100px;
+}
+#footArea #comment-form button {
+    background-color: var(--bg-1);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: 8px;
+}
+#footArea #comment-form button:hover {
+    background-color: #669fcb;
+}
+
 #footArea #comment-form {
     width: 55.5%;
     margin: 30px auto;
@@ -1329,6 +1449,10 @@ h2 {
     background-color: #669fcb;
 }
 
+
+.hidden {
+    display: none;
+}
 /*------- Comment-end -------*/
 
 
@@ -1539,6 +1663,8 @@ a#back-top {
     #Portfolio .con_hover {left: calc(64vw - 50px); bottom: calc(34vh - 20px);}
 
     .content {padding: 4rem;}
+
+    #footArea #show-more-btn {bottom: -5%; right: 23%;}
 }
 
 @media only screen and (max-width: 1440px) {
@@ -1561,6 +1687,7 @@ a#back-top {
 
     /* folder-img */
     #subContent .folderWrap{width:1250px;}
+    #footArea #show-more-btn {bottom: -4%; right: 23%;}
 }
 
 @media only screen and (max-width: 1280px) {
@@ -1630,6 +1757,7 @@ a#back-top {
     #subContent .folderWrap {margin:auto 5em;}
 
     #footArea .Comment-Wrap h2 {font-size: 3.5rem;}
+    #footArea #show-more-btn {    right: 23.2%;}
 }
 
 @media only screen and (max-width: 900px) {
@@ -1695,10 +1823,11 @@ a#back-top {
     #footArea .cover p {font-weight:500;}
 
     /*comment*/
-    #footArea .comment-container {width: 70%;}
+    #footArea .comment-container {width: 68%;}
     #footArea .Comment-Wrap h2 {font-size: 2.65rem; font-weight: bold;}
-    #footArea #comment-form {width: 70%;}
+    #footArea #comment-form {width: 69%;}
     #footArea #comment-form button {width: 100%; margin: 0 5px;}
+    #footArea #show-more-btn {width: 68%; right: 16%;}
 
     /*footer*/
     #footArea .foot_box {flex-flow: column; align-items: center; padding: 2.5rem 1rem;}
@@ -1800,11 +1929,20 @@ a#back-top {
     /* 3d-swiper */
     #subContent .swiper .swiper-wrapper {height:33rem;}
 
+    /* comment */
+    #footArea .comment-container {width: 76%; padding:10px;}
+    #footArea .comment-container div { padding-bottom: 10px; margin-bottom: 10px; }
+    #footArea .comment-container div .delete {padding: 2px 8px; font-size: 0.75rem;}
+    #footArea .comment-container div .name {font-size: 0.9rem;}
+    #footArea .comment-container div .time { font-size: 10px;}
+    #footArea #comment-form {width:80%; margin: 20px auto 30px;}
+
     /* footer */
     #footArea .foot_box >* {margin-bottom:2rem;}
     #footArea .since {font-size: clamp(5vh, 4vh, 5rem);}
     .popup {bottom: 3.5%;}
-    
+    #footArea #show-more-btn { right: 11.5%;  width: 77.5%;}
+
 }
 
 @media only screen and (max-width: 375px){
@@ -1827,6 +1965,8 @@ a#back-top {
 
     /* 3d-swiper */
     #subContent .swiper .swiper-slide {width: 300px;}
+
+    #footArea #show-more-btn {width: 77%;}
 }
 
 @media only screen and (max-width: 350px) {
