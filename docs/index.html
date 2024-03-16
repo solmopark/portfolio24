@@ -782,14 +782,15 @@
             <form id="comment-form">
                 <input type="text" id="nickname" placeholder="NAME"><br>
                 <input type="email" id="email" placeholder="E-MAIL"><br>
-                <textarea id="context" placeholder="TEXT"></textarea><br>
+                <textarea id="content" placeholder="TEXT"></textarea><br>
                 <button type="button" onclick="submitComment()">댓글 작성</button>
             </form>
             <hr>
             <div class="comment-container" id="comment-container">
                 <!-- 댓글이 표시될 영역 -->
             </div>
-            <button id="show-more-btn" class="hidden" onclick="showMoreComments()">더보기</button>
+            <button class="show-more-btn" id="showMoreBtn" onclick="showMoreComments()" style="display: none;">더
+                보기</button>
         </section>
 
         <!-- footer -->

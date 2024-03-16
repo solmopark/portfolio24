@@ -1337,8 +1337,20 @@ h2 {
 
 #footArea .comment-container div .email {font-weight: 100;}
 
-#footArea .comment-container div .context {
-    display:block;
+#footArea .comment-container div strong {
+    display: block;
+    font-size: var(--fs-s);
+    text-align: start;
+    padding: 0;
+    position: inherit;
+}
+
+#footArea .comment-container div .content {
+    display: block;
+    font-size: var(--fs-s);
+    text-align: start;
+    padding: 0;
+    position: inherit;
 }
 
 #footArea .comment-container div .time {

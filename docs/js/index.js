@@ -329,18 +329,17 @@ Textmove__();
 function Comment__Box() {
   const nicknameInput = document.getElementById("nickname");
   const emailInput = document.getElementById("email");
-  const commentInput = document.getElementById("context");
+  const commentInput = document.getElementById("content");
   const commentSubmit = document.querySelector("button[type='button']");
-  const showMoreBtn = document.getElementById("show-more-btn");
+  const showMoreBtn = document.getElementById("showMoreBtn");
 
   let comments = [];
-  let visibleComments = 3; // 초기에 보여지는 댓글 수
 
   function submitComment() {
     const nickname = nicknameInput.value.trim(); // 닉네임에서 앞뒤 공백을 제거합니다.
     const email = emailInput.value.trim(); // 이메일에서 앞뒤 공백을 제거합니다.
     const newComment = commentInput.value.trim(); // 입력값에서 앞뒤 공백을 제거합니다.
-    
+
     if (nickname.length === 0 || email.length === 0 || newComment.length === 0) {
       alert("댓글을 작성하셨습니!🥰");
     } else {
@@ -350,11 +349,16 @@ function Comment__Box() {
     event.preventDefault();
   }
 
-  function addComment(nickname, email, context) {
+  function addComment(nickname, email, content) {
     const commentLists = document.getElementById("comment-container");
     const newCommentList = document.createElement("div");
     const currentTime = new Date().toLocaleString();
-    const defaultComment = `<span class="name">${nickname}</span><span class="email">(${email})</span>: <strong>${context}</strong> <span class="time">(${currentTime})</span><button class="delete" onclick="deleteComment(this.parentNode)">삭제</button>`;
+    const defaultComment = `<span class="name">${nickname}</span>
+        <span class="email">${email}</span> <br>
+        <span class="content">${content}</span>
+        <span class="time">${currentTime}</span>
+        <button class="delete" onclick="confirmDelete(this.parentNode)">삭제</button>   
+    `;
 
     newCommentList.innerHTML = defaultComment;
     commentLists.appendChild(newCommentList);
@@ -362,7 +366,7 @@ function Comment__Box() {
     const commentObj = {
       nickname: nickname,
       email: email,
-      context: context,
+      content: content,
       time: currentTime
     };
 
@@ -371,42 +375,58 @@ function Comment__Box() {
     nicknameInput.value = "";
     emailInput.value = "";
 
-    if (comments.length > visibleComments) {
-      showMoreBtn.classList.remove('hidden');
+    if (comments.length > 3) {
+      showMoreBtn.style.display = "block";
+      hideComments();
+    }
+  }
+
+  function confirmDelete(commentNode) {
+    if (confirm("정말로 이 댓글을 삭제하시겠습니까?")) {
+      deleteComment(commentNode);
+      location.reload(); // 페이지 새로고침
     }
   }
 
   function deleteComment(commentNode) {
     const commentContainer = document.getElementById("comment-container");
-    const indexToDelete = Array.from(commentContainer.children).indexOf(commentNode);
     commentContainer.removeChild(commentNode);
-    comments.splice(indexToDelete, 1); // 삭제된 댓글 배열에서 제거
     saveComments();
   }
 
   function loadComments() {
     const commentWrapper = document.getElementById("comment-container");
     commentWrapper.innerHTML = "";
-    comments.forEach((commentObj, index) => {
-      if (index < visibleComments) {
-        const newCommentList = document.createElement("div");
-        const defaultComment = `<span class="name">${commentObj.nickname}</span><span class="email">(${commentObj.email})</span> <br> <strong>${commentObj.context}</strong> <span class="time">(${commentObj.time})</span><button class="delete" onclick="deleteComment(this.parentNode)">삭제</button>`;
-        newCommentList.innerHTML = defaultComment;
-        commentWrapper.appendChild(newCommentList);
-      }
+    const visibleComments = comments.slice(0, 3);
+    visibleComments.forEach((commentObj) => {
+      const newCommentList = document.createElement("div");
+      const defaultComment = `<span  class="name">${commentObj.nickname}</span ><span  class="email">(${commentObj.email})</span > <br> <strong>${commentObj.content}</strong> <span  class="time">(${commentObj.time})</span ><button class="delete" onclick="confirmDelete(this.parentNode)">삭제</button>`;
+      newCommentList.innerHTML = defaultComment;
+      commentWrapper.appendChild(newCommentList);
     });
+
+    if (comments.length > 3) {
+      showMoreBtn.style.display = "block";
+    }
   }
 
   function saveComments() {
-    localStorage.setItem("comments", JSON.stringify(comments));
+    localStorage.setItem("comments", JSON.stringify(comments.filter(comment => new Date(comment.time) > new Date())));
   }
 
   function showMoreComments() {
-    visibleComments += 3;
-    loadComments();
-    if (visibleComments >= comments.length) {
-      showMoreBtn.classList.add('hidden');
-    }
+    const hiddenComments = document.querySelectorAll('.comment-container .hidden');
+    hiddenComments.forEach(comment => {
+      comment.classList.remove('hidden');
+    });
+    showMoreBtn.style.display = "none";
+  }
+
+  function hideComments() {
+    const hiddenComments = document.querySelectorAll('.comment-container div:nth-child(n+4)');
+    hiddenComments.forEach(comment => {
+      comment.classList.add('hidden');
+    });
   }
 
   const init = () => {
@@ -418,6 +438,7 @@ function Comment__Box() {
   };
 
   init();
+
 }
 Comment__Box();
 
