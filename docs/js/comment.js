@@ -84,19 +84,20 @@ function deleteComment(commentNode, commentTime) {
     saveComments(); // 삭제된 댓글을 저장하기 위해 saveComments 함수 호출
 }
 
+//유효하지 않은 날짜로 저장된 댓글은 표시되지 않게 수정
 function loadComments() {
     const commentWrapper = document.getElementById("comment-container");
     commentWrapper.innerHTML = "";
     comments.forEach((commentObj) => {
         const newCommentList = document.createElement("div");
-        newCommentList.innerHTML = `
-            <span class="name">${commentObj.nickname}</span>
-            <span class="email">${commentObj.email}</span> <br>
-            <span class="content">${commentObj.content}</span>
-            <span class="time">${new Date(commentObj.time).toLocaleString()}</span>
-            <button class="delete" onclick="confirmDelete(this.parentNode, ${commentObj.time})">Delete</button>
-        `;
-        commentWrapper.appendChild(newCommentList);
+        const commentTime = new Date(commentObj.time);
+        
+        // 댓글의 시간이 유효한지 검사합니다.
+        if (!isNaN(commentTime.getTime()) && commentTime.toLocaleString() !== 'Invalid Date') {
+            const defaultComment = `<span class="name">${commentObj.nickname}</span> <span class="email">(${commentObj.email})</span> <br> <strong>${commentObj.content}</strong> <span class="time" data-time="${commentObj.time}">(${commentTime.toLocaleString()})</span> <button class="delete" onclick="confirmDelete(this.parentNode, '${commentObj.time}')">Delete</button>`;
+            newCommentList.innerHTML = defaultComment;
+            commentWrapper.appendChild(newCommentList);
+        }
     });
 
     if (comments.length > 3) {
