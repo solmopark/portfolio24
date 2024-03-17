@@ -1829,6 +1829,7 @@ a#back-top {
 
     /*3d-swiper*/
     #subContent .swiper .swiper-slide {width:330px; height:440px;}
+    #subContent .swiper .swiper-slide .swiperTbox {padding:0.5rem 10px;}
     #subContent .swiper .swiper-wrapper {height:34.5rem;}
     #subContent .swiper .swiper-slide .fancy-slider-button {width:85px;}
 
