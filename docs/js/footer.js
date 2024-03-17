@@ -37,25 +37,22 @@ function isValidEmail(email) {
 function addComment(nickname, email, content) {
     const commentLists = document.getElementById("comment-container");
     const newCommentList = document.createElement("div");
-    const currentTime = new Date().getTime(); // Using milliseconds as time value
+    const currentTime = new Date(); // 현재 시간을 가져옵니다.
+    const currentTimeString = currentTime.toLocaleString(); // 현재 시간을 문자열로 변환합니다.
 
-    newCommentList.innerHTML = `
-        <span class="name">${nickname}</span>
-        <span class="email">${email}</span> <br>
-        <span class="content">${content}</span>
-        <span class="time">${new Date(currentTime).toLocaleString()}</span>
-        <button class="delete" onclick="confirmDelete(this.parentNode, ${currentTime})">Delete</button>
-    `;
+    const defaultComment = `<span class="name">${nickname}</span> <span class="email">${email}</span> <br> <span class="content">${content}</span> <span class="time">${currentTimeString}</span> <button class="delete" onclick="confirmDelete(this.parentNode, '${currentTimeString}')">Delete</button> `;
+
+    newCommentList.innerHTML = defaultComment;
     commentLists.insertBefore(newCommentList, commentLists.firstChild);
 
     const commentObj = {
         nickname: nickname,
         email: email,
         content: content,
-        time: currentTime
+        time: currentTimeString // 현재 시간을 문자열 형태로 저장합니다.
     };
 
-    comments.unshift(commentObj);
+    comments.unshift(commentObj); // Add new comment to the beginning of the array
     commentInput.value = "";
     nicknameInput.value = "";
     emailInput.value = "";
@@ -65,7 +62,7 @@ function addComment(nickname, email, content) {
         hideComments();
     }
 
-    saveComments();
+    saveComments(); // 새로운 댓글을 저장합니다.
 }
 
 function confirmDelete(commentNode, commentTime) {
