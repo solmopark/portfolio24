@@ -13,7 +13,7 @@ function submitComment() {
     const newComment = commentInput.value.trim();
 
     if (nickname.length === 0 || email.length === 0 || newComment.length === 0) {
-        alert("모든 필드를 작성해주세요.🥰");
+        alert("댓글을 작성하셨습니다!🥰");
     } else {
         addComment(nickname, email, newComment);
         saveComments();
@@ -28,7 +28,7 @@ function addComment(nickname, email, content) {
     const defaultComment = `<span class="name">${nickname}</span> <span class="email">${email}</span> <br> <span class="content">${content}</span> <span class="time">${new Date(currentTime).toLocaleString()}</span> <button class="delete" onclick="confirmDelete(this.parentNode, ${currentTime})">Delete</button> `;
 
     newCommentList.innerHTML = defaultComment;
-    commentLists.insertBefore(newCommentList, commentLists.firstChild); // Insert as first child to maintain the order
+    commentLists.insertBefore(newCommentList, commentLists.firstChild);
 
     const commentObj = {
         nickname: nickname,
@@ -49,7 +49,7 @@ function addComment(nickname, email, content) {
 }
 
 function confirmDelete(commentNode, commentTime) {
-    if (confirm("정말로 삭제하시겠습니까?🤔")) {
+    if (confirm("정말로 삭제하시겠습니까?🤔?")) {
         deleteComment(commentNode, commentTime);
     }
 }
@@ -58,8 +58,9 @@ function deleteComment(commentNode, commentTime) {
     const commentContainer = document.getElementById("comment-container");
     commentContainer.removeChild(commentNode);
     comments = comments.filter(comment => comment.time !== commentTime); // Remove the deleted comment from the array
-    saveComments();
+    saveComments(); // localStorage에 변경된 댓글 목록 저장
 }
+
 
 function loadComments() {
     const commentWrapper = document.getElementById("comment-container");
