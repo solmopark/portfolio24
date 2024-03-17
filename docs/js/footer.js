@@ -13,7 +13,7 @@ function submitComment() {
     const newComment = commentInput.value.trim();
 
     if (nickname.length === 0 || email.length === 0 || newComment.length === 0) {
-        alert("모든 필드를 작성해주세요.");
+        alert("모든 필드를 작성해주세요.🥰");
     } else {
         addComment(nickname, email, newComment);
         saveComments();
@@ -24,11 +24,11 @@ function submitComment() {
 function addComment(nickname, email, content) {
     const commentLists = document.getElementById("comment-container");
     const newCommentList = document.createElement("div");
-    const currentTime = new Date().toLocaleString();
-    const defaultComment = `<span class="name">${nickname}</span> <span class="email">${email}</span> <br> <span class="content">${content}</span> <span class="time">${currentTime}</span> <button class="delete" onclick="confirmDelete(this.parentNode)">삭제</button> `;
+    const currentTime = new Date().getTime(); // Using milliseconds as time value
+    const defaultComment = `<span class="name">${nickname}</span> <span class="email">${email}</span> <br> <span class="content">${content}</span> <span class="time">${new Date(currentTime).toLocaleString()}</span> <button class="delete" onclick="confirmDelete(this.parentNode, ${currentTime})">Delete</button> `;
 
     newCommentList.innerHTML = defaultComment;
-    commentLists.appendChild(newCommentList);
+    commentLists.insertBefore(newCommentList, commentLists.firstChild); // Insert as first child to maintain the order
 
     const commentObj = {
         nickname: nickname,
@@ -37,7 +37,7 @@ function addComment(nickname, email, content) {
         time: currentTime
     };
 
-    comments.push(commentObj);
+    comments.unshift(commentObj); // Add new comment to the beginning of the array
     commentInput.value = "";
     nicknameInput.value = "";
     emailInput.value = "";
@@ -48,17 +48,17 @@ function addComment(nickname, email, content) {
     }
 }
 
-function confirmDelete(commentNode) {
-    if (confirm("정말로 삭제하시겠습니까?")) {
-        deleteComment(commentNode);
+function confirmDelete(commentNode, commentTime) {
+    if (confirm("정말로 삭제하시겠습니까?🤔")) {
+        deleteComment(commentNode, commentTime);
     }
 }
 
-function deleteComment(commentNode) {
+function deleteComment(commentNode, commentTime) {
     const commentContainer = document.getElementById("comment-container");
     commentContainer.removeChild(commentNode);
+    comments = comments.filter(comment => comment.time !== commentTime); // Remove the deleted comment from the array
     saveComments();
-    location.reload();
 }
 
 function loadComments() {
@@ -66,11 +66,7 @@ function loadComments() {
     commentWrapper.innerHTML = "";
     comments.forEach((commentObj) => {
         const newCommentList = document.createElement("div");
-        const defaultComment = `<span  class="name">${commentObj.nickname}</span >
-<span  class="email">(${commentObj.email})</span > <br> 
-<strong>${commentObj.content}</strong> 
-<span  class="time">(${commentObj.time})</span >
-<button class="delete" onclick="confirmDelete(this.parentNode)">삭제</button>`;
+        const defaultComment = `<span class="name">${commentObj.nickname}</span> <span class="email">(${commentObj.email})</span> <br> <strong>${commentObj.content}</strong> <span class="time">(${new Date(commentObj.time).toLocaleString()})</span> <button class="delete" onclick="confirmDelete(this.parentNode, ${commentObj.time})">Delete</button>`;
         newCommentList.innerHTML = defaultComment;
         commentWrapper.appendChild(newCommentList);
     });
