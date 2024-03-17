@@ -1300,7 +1300,7 @@ h2 {
     position: relative;
 }
 
-#footArea #show-more-btn {
+#footArea #showMoreBtn {
     background-color: var(--bg-1);
     color: var(--white);
     border: none;
@@ -1315,7 +1315,7 @@ h2 {
     bottom: -5%;
     right: 22.8%;
 }
-#footArea #show-more-btn:hover {
+#footArea #showMoreBtn:hover {
     background-color: #669fcb;
 }
 #footArea .comment-container div {
@@ -1677,7 +1677,7 @@ a#back-top {
 
     .content {padding: 4rem;}
 
-    #footArea #show-more-btn {bottom: -5%; right: 23%;}
+    #footArea #showMoreBtn {bottom: -5%; right: 23%;}
 }
 
 @media only screen and (max-width: 1440px) {
@@ -1700,7 +1700,7 @@ a#back-top {
 
     /* folder-img */
     #subContent .folderWrap{width:1250px;}
-    #footArea #show-more-btn {bottom: -4%; right: 23%;}
+    #footArea #showMoreBtn {bottom: -4%; right: 23%;}
 }
 
 @media only screen and (max-width: 1280px) {
@@ -1770,7 +1770,7 @@ a#back-top {
     #subContent .folderWrap {margin:auto 5em;}
 
     #footArea .Comment-Wrap h2 {font-size: 3.5rem;}
-    #footArea #show-more-btn {    right: 23.2%;}
+    #footArea #showMoreBtn {    right: 23.2%;}
 }
 
 @media only screen and (max-width: 900px) {
@@ -1841,7 +1841,7 @@ a#back-top {
     #footArea .Comment-Wrap h2 {font-size: 2.65rem; font-weight: bold;}
     #footArea #comment-form {width: 69%;}
     #footArea #comment-form button {width: 100%; margin: 0 5px;}
-    #footArea #show-more-btn {width: 68%; right: 16%;}
+    #footArea #showMoreBtn {width: 68%; right: 16%;}
 
     /*footer*/
     #footArea .foot_box {flex-flow: column; align-items: center; padding: 2.5rem 1rem;}
@@ -1955,7 +1955,7 @@ a#back-top {
     #footArea .foot_box >* {margin-bottom:2rem;}
     #footArea .since {font-size: clamp(5vh, 4vh, 5rem);}
     .popup {bottom: 3.5%;}
-    #footArea #show-more-btn { right: 11.5%;  width: 77.5%;}
+    #footArea #showMoreBtn { right: 11.5%;  width: 77.5%;}
 
 }
 
@@ -1980,7 +1980,7 @@ a#back-top {
     /* 3d-swiper */
     #subContent .swiper .swiper-slide {width: 300px;}
 
-    #footArea #show-more-btn {width: 77%;}
+    #footArea #showMoreBtn {width: 77%;}
 }
 
 @media only screen and (max-width: 350px) {
