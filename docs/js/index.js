@@ -325,4 +325,41 @@ function Textmove__(){
 }  
 Textmove__();
 
+ // email copy
+function E_mail__Copy() {
+  // naver mail url 
+  document.getElementById("nmailImg").addEventListener("click", function () {
+      var email = "haesol_97@naver.com";
+      copyToClipboard(email);
+      showPopupMessage("이메일 주소가 복사되었습니다🤗");
+  });
 
+  // google mail url 
+  document.getElementById("gmailImg").addEventListener("click", function () {
+      var email = "haegol.p@gmail.com";
+      copyToClipboard(email);
+      showPopupMessage("이메일 주소가 복사되었습니다🤗");
+  });
+
+  function copyToClipboard(text) {
+      var input = document.createElement("input");
+      input.style.position = "fixed";
+      input.style.opacity = 0;
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+  }
+
+  function showPopupMessage(message) {
+      var popup = document.getElementById("popupMsg");
+      var popupText = document.getElementById("popupText");
+      popupText.innerHTML = message;
+      popup.classList.add("show");
+      setTimeout(function () {
+          popup.classList.remove("show");
+      }, 2000);
+  }
+}
+E_mail__Copy();
