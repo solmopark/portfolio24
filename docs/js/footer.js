@@ -1,4 +1,4 @@
-// comment
+// 유효성 검사 추가 버전 맟 댓글 삭제 부분 주가
 const nicknameInput = document.getElementById("nickname");
 const emailInput = document.getElementById("email");
 const commentInput = document.getElementById("content");
@@ -12,22 +12,40 @@ function submitComment() {
     const email = emailInput.value.trim();
     const newComment = commentInput.value.trim();
 
-    if (nickname.length === 0 || email.length === 0 || newComment.length === 0) {
-        alert("댓글을 작성하셨습니다!🥰");
-    } else {
-        addComment(nickname, email, newComment);
-        saveComments();
+    // 이메일 유효성 검사
+    if (!isValidEmail(email)) {
+        alert("유효하지 않은 이메일 주소입니다.😥");
+        return;
     }
-    event.preventDefault();
+
+    // 댓글이 비어 있는지 확인
+    if (nickname.length === 0 || newComment.length === 0) {
+        alert("닉네임과 댓글을 모두 작성해주세요.😥");
+        return;
+    }
+
+    addComment(nickname, email, newComment);
+    alert("댓글이 작성되었습니다!🥰");
+}
+
+// 이메일 유효성 검사 함수
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
 
 function addComment(nickname, email, content) {
     const commentLists = document.getElementById("comment-container");
     const newCommentList = document.createElement("div");
     const currentTime = new Date().getTime(); // Using milliseconds as time value
-    const defaultComment = `<span class="name">${nickname}</span> <span class="email">${email}</span> <br> <span class="content">${content}</span> <span class="time">${new Date(currentTime).toLocaleString()}</span> <button class="delete" onclick="confirmDelete(this.parentNode, ${currentTime})">Delete</button> `;
 
-    newCommentList.innerHTML = defaultComment;
+    newCommentList.innerHTML = `
+        <span class="name">${nickname}</span>
+        <span class="email">${email}</span> <br>
+        <span class="content">${content}</span>
+        <span class="time">${new Date(currentTime).toLocaleString()}</span>
+        <button class="delete" onclick="confirmDelete(this.parentNode, ${currentTime})">Delete</button>
+    `;
     commentLists.insertBefore(newCommentList, commentLists.firstChild);
 
     const commentObj = {
@@ -37,7 +55,7 @@ function addComment(nickname, email, content) {
         time: currentTime
     };
 
-    comments.unshift(commentObj); // Add new comment to the beginning of the array
+    comments.unshift(commentObj);
     commentInput.value = "";
     nicknameInput.value = "";
     emailInput.value = "";
@@ -46,39 +64,35 @@ function addComment(nickname, email, content) {
         showMoreBtn.style.display = "block";
         hideComments();
     }
+
+    saveComments();
 }
 
 function confirmDelete(commentNode, commentTime) {
-    if (confirm("정말로 삭제하시겠습니까?🤔?")) {
+    if (confirm("정말로 삭제하시겠습니까?🤔")) {
         deleteComment(commentNode, commentTime);
     }
 }
 
 function deleteComment(commentNode, commentTime) {
-    const commentContainer = document.getElementById("comment-container");
-    commentContainer.removeChild(commentNode);
+    commentNode.remove(); // 해당 댓글 요소를 바로 삭제합니다.
     comments = comments.filter(comment => comment.time !== commentTime); // Remove the deleted comment from the array
-    saveComments(); // localStorage에 변경된 댓글 목록 저장
+    saveComments(); // 삭제된 댓글을 저장하기 위해 saveComments 함수 호출
 }
-
 
 function loadComments() {
     const commentWrapper = document.getElementById("comment-container");
     commentWrapper.innerHTML = "";
     comments.forEach((commentObj) => {
-        // 날짜가 유효한지 확인
-        const commentDate = new Date(commentObj.time);
-        if (!isNaN(commentDate.getTime())) { // 유효한 날짜인 경우
-            const newCommentList = document.createElement("div");
-            const defaultComment = `<span class="name">${commentObj.nickname}</span> <span class="email">(${commentObj.email})</span> <br> <strong>${commentObj.content}</strong> <span class="time">(${commentDate.toLocaleString()})</span> <button class="delete" onclick="confirmDelete(this.parentNode, ${commentObj.time})">Delete</button>`;
-            newCommentList.innerHTML = defaultComment;
-            commentWrapper.appendChild(newCommentList);
-        } else {
-            // 유효하지 않은 날짜인 경우 해당 댓글을 삭제하고 저장합니다.
-            console.warn("Invalid comment date detected. Removing the comment.");
-            comments = comments.filter(comment => comment.time !== commentObj.time);
-            saveComments();
-        }
+        const newCommentList = document.createElement("div");
+        newCommentList.innerHTML = `
+            <span class="name">${commentObj.nickname}</span>
+            <span class="email">${commentObj.email}</span> <br>
+            <span class="content">${commentObj.content}</span>
+            <span class="time">${new Date(commentObj.time).toLocaleString()}</span>
+            <button class="delete" onclick="confirmDelete(this.parentNode, ${commentObj.time})">Delete</button>
+        `;
+        commentWrapper.appendChild(newCommentList);
     });
 
     if (comments.length > 3) {
