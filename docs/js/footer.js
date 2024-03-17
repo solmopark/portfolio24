@@ -66,10 +66,19 @@ function loadComments() {
     const commentWrapper = document.getElementById("comment-container");
     commentWrapper.innerHTML = "";
     comments.forEach((commentObj) => {
-        const newCommentList = document.createElement("div");
-        const defaultComment = `<span class="name">${commentObj.nickname}</span> <span class="email">(${commentObj.email})</span> <br> <strong>${commentObj.content}</strong> <span class="time">(${new Date(commentObj.time).toLocaleString()})</span> <button class="delete" onclick="confirmDelete(this.parentNode, ${commentObj.time})">Delete</button>`;
-        newCommentList.innerHTML = defaultComment;
-        commentWrapper.appendChild(newCommentList);
+        // 날짜가 유효한지 확인
+        const commentDate = new Date(commentObj.time);
+        if (!isNaN(commentDate.getTime())) { // 유효한 날짜인 경우
+            const newCommentList = document.createElement("div");
+            const defaultComment = `<span class="name">${commentObj.nickname}</span> <span class="email">(${commentObj.email})</span> <br> <strong>${commentObj.content}</strong> <span class="time">(${commentDate.toLocaleString()})</span> <button class="delete" onclick="confirmDelete(this.parentNode, ${commentObj.time})">Delete</button>`;
+            newCommentList.innerHTML = defaultComment;
+            commentWrapper.appendChild(newCommentList);
+        } else {
+            // 유효하지 않은 날짜인 경우 해당 댓글을 삭제하고 저장합니다.
+            console.warn("Invalid comment date detected. Removing the comment.");
+            comments = comments.filter(comment => comment.time !== commentObj.time);
+            saveComments();
+        }
     });
 
     if (comments.length > 3) {
