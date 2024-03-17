@@ -40,8 +40,9 @@ function addComment(nickname, email, content) {
     const currentTime = new Date(); // 현재 시간을 가져옵니다.
     const currentTimeString = currentTime.toLocaleString(); // 현재 시간을 문자열로 변환합니다.
 
-    if (!currentTimeString || currentTimeString === 'Invalid Date') {
-        // 현재 시간 변환 실패 시 오류 메시지를 표시하고 댓글을 저장하지 않습니다.
+    // 현재 시간이 유효한지 검사합니다.
+    if (isNaN(currentTime.getTime()) || currentTimeString === 'Invalid Date') {
+        // 현재 시간 변환이 실패한 경우 오류 메시지를 표시하고 댓글을 추가하지 않습니다.
         alert("댓글을 저장하는 도중 오류가 발생했습니다. 다시 시도해주세요.");
         return;
     }
@@ -70,7 +71,6 @@ function addComment(nickname, email, content) {
 
     saveComments(); // 새로운 댓글을 저장합니다.
 }
-
 
 function confirmDelete(commentNode, commentTime) {
     if (confirm("정말로 삭제하시겠습니까?🤔")) {
