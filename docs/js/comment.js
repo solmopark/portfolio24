@@ -1,9 +1,9 @@
-// 유효성 검사 추가 버전 맟 댓글 삭제 부분 주가
 const nicknameInput = document.getElementById("nickname");
 const emailInput = document.getElementById("email");
 const commentInput = document.getElementById("content");
 const commentSubmit = document.querySelector("button[type='button']");
 const showMoreBtn = document.getElementById("showMoreBtn");
+const commentContainer = document.getElementById("comment-container");
 
 let comments = [];
 
@@ -12,124 +12,88 @@ function submitComment() {
     const email = emailInput.value.trim();
     const newComment = commentInput.value.trim();
 
-    // 이메일 유효성 검사
     if (!isValidEmail(email)) {
         alert("유효하지 않은 이메일 주소입니다.😥");
         return;
     }
 
-    // 댓글이 비어 있는지 확인
     if (nickname.length === 0 || newComment.length === 0) {
         alert("닉네임과 댓글을 모두 작성해주세요.😥");
         return;
     }
 
-    addComment(nickname, email, newComment);
-    alert("댓글이 작성되었습니다!🥰");
-}
-
-// 이메일 유효성 검사 함수
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    addComment(nickname, email, newComment); // 새로운 댓글 추가
 }
 
 function addComment(nickname, email, content) {
-    const commentLists = document.getElementById("comment-container");
-    const newCommentList = document.createElement("div");
-    const currentTime = new Date(); // 현재 시간을 가져옵니다.
-    const currentTimeString = currentTime.toLocaleString(); // 현재 시간을 문자열로 변환합니다.
+    const currentTime = new Date();
+    const currentTimeString = currentTime.toLocaleString();
 
-    // 현재 시간이 유효한지 검사합니다.
-    if (isNaN(currentTime.getTime()) || currentTimeString === 'Invalid Date') {
-        // 현재 시간 변환이 실패한 경우 오류 메시지를 표시하고 댓글을 추가하지 않습니다.
-        alert("댓글을 저장하는 도중 오류가 발생했습니다. 다시 시도해주세요.");
-        return;
-    }
-
-    const defaultComment = `<span class="name">${nickname}</span> <span class="email">${email}</span> <br> <span class="content">${content}</span> <span class="time">${currentTimeString}</span> <button class="delete" onclick="confirmDelete(this.parentNode, '${currentTimeString}')">Delete</button> `;
-
-    newCommentList.innerHTML = defaultComment;
-    commentLists.insertBefore(newCommentList, commentLists.firstChild);
-
-    const commentObj = {
+    const newComment = {
         nickname: nickname,
         email: email,
         content: content,
-        time: currentTimeString // 현재 시간을 문자열 형태로 저장합니다.
+        time: currentTimeString
     };
 
-    comments.unshift(commentObj); // Add new comment to the beginning of the array
+    comments.unshift(newComment); // 새로운 댓글을 배열의 첫 번째로 추가
+    saveComments(); // 댓글 저장
+
+    renderComments(); // 댓글 화면에 렌더링
+    alert("댓글이 작성되었습니다!🥰");
+
+    // 입력 필드 초기화
     commentInput.value = "";
     nicknameInput.value = "";
     emailInput.value = "";
-
-    if (comments.length > 3) {
-        showMoreBtn.style.display = "block";
-        hideComments();
-    }
-
-    saveComments(); // 새로운 댓글을 저장합니다.
 }
 
-function confirmDelete(commentNode, commentTime) {
+function deleteComment(commentTime) {
     if (confirm("정말로 삭제하시겠습니까?🤔")) {
-        deleteComment(commentNode, commentTime);
+        comments = comments.filter(comment => comment.time !== commentTime); // 삭제할 댓글을 필터링하여 제거
+        saveComments(); // 변경된 댓글 목록을 저장
+        renderComments(); // 변경된 댓글을 다시 화면에 렌더링
     }
 }
 
-function deleteComment(commentNode, commentTime) {
-    commentNode.remove(); // 해당 댓글 요소를 바로 삭제합니다.
-    comments = comments.filter(comment => comment.time !== commentTime); // Remove the deleted comment from the array
-    saveComments(); // 삭제된 댓글을 저장하기 위해 saveComments 함수 호출
-}
-
-//유효하지 않은 날짜로 저장된 댓글은 표시되지 않게 수정
-function loadComments() {
-    const commentWrapper = document.getElementById("comment-container");
-    commentWrapper.innerHTML = "";
-    comments.forEach((commentObj) => {
-        const newCommentList = document.createElement("div");
-        const commentTime = new Date(commentObj.time);
-        
-        // 댓글의 시간이 유효한지 검사합니다.
-        if (!isNaN(commentTime.getTime()) && commentTime.toLocaleString() !== 'Invalid Date') {
-            const defaultComment = `<span class="name">${commentObj.nickname}</span> <span class="email">(${commentObj.email})</span> <br> <strong>${commentObj.content}</strong> <span class="time" data-time="${commentObj.time}">(${commentTime.toLocaleString()})</span> <button class="delete" onclick="confirmDelete(this.parentNode, '${commentObj.time}')">Delete</button>`;
-            newCommentList.innerHTML = defaultComment;
-            commentWrapper.appendChild(newCommentList);
-        }
-    });
-
-    if (comments.length > 3) {
-        showMoreBtn.style.display = "block";
-    }
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
 
 function saveComments() {
     localStorage.setItem("comments", JSON.stringify(comments));
 }
 
-function showMoreComments() {
-    const hiddenComments = document.querySelectorAll(".comment-container .hidden");
-    hiddenComments.forEach((comment) => {
-        comment.classList.remove("hidden");
-    });
-    showMoreBtn.style.display = "none";
+function loadComments() {
+    const savedComments = localStorage.getItem("comments");
+    comments = savedComments ? JSON.parse(savedComments) : []; // 로컬 스토리지에서 댓글 불러오기
+
+    renderComments(); // 불러온 댓글을 화면에 렌더링
 }
 
-function hideComments() {
-    const hiddenComments = document.querySelectorAll(".comment-container div:nth-child(n+4)");
-    hiddenComments.forEach((comment) => {
-        comment.classList.add("hidden");
+function renderComments() {
+    commentContainer.innerHTML = ""; // 댓글 컨테이너 초기화
+
+    comments.forEach(comment => {
+        const commentElement = document.createElement("div");
+        commentElement.innerHTML = `
+            <span class="name">${comment.nickname}</span> <span class="email">(${comment.email})</span> <br>
+            <strong>${comment.content}</strong> <span class="time">${comment.time}</span>
+            <button class="delete" onclick="deleteComment('${comment.time}')">Delete</button>
+        `;
+        commentContainer.appendChild(commentElement);
     });
+
+    if (comments.length > 3) {
+        showMoreBtn.style.display = "block";
+    } else {
+        showMoreBtn.style.display = "none";
+    }
 }
 
-const init = () => {
-    commentSubmit.addEventListener("click", submitComment);
-    window.addEventListener("load", () => {
-        comments = JSON.parse(localStorage.getItem("comments")) || [];
-        loadComments();
-    });
-};
+// 페이지 로드 시 댓글 불러오기
+window.addEventListener("load", loadComments);
 
-init();
+// 이벤트 리스너 추가
+commentSubmit.addEventListener("click", submitComment);
