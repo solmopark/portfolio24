@@ -1,30 +1,4 @@
-console.clear();
-
-
-// loading style
-function Loader__ing() {
-  const loader = document.querySelector("#loading");
-  const html = document.querySelector("html");
-
-  html.style.overflow = "hidden"; //로딩 중 스크롤 방지
-
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      //로딩속도 구현
-
-      loader.style.opacity = "0";
-      html.style.overflow = "auto"; //스크롤 방지 해제
-
-      setTimeout(() => {
-        loader.style.display = "none";
-      }, 300);
-      AOS.init();
-    }, 1000);
-  });
-}
-Loader__ing();
-
-
+console.log();
 
 //Cursor Custom
 function cursor__Event(){
