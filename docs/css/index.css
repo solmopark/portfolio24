@@ -38,7 +38,7 @@ h2 {
     background:var(--black);    
     z-index: 55;
 }
-#loading .loade {
+#loading .load__ {
     position: relative;
     top: 42%;
     font-size: 1rem;
