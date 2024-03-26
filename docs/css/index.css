@@ -1549,7 +1549,7 @@ h2 {
     position: fixed; 
     display:none; 
     mix-blend-mode: difference;
-    bottom: 5%; 
+    bottom: 7%; 
     right:10px; 
     width:auto;
     z-index:51;
@@ -1844,6 +1844,9 @@ a#back-top {
     #footArea .since {text-align:center;}
     #footArea .footer_B {margin:4rem 0 2rem;}
     .popup {bottom:5%;}
+
+    /* top-button */
+    #back-top{bottom:4%;}
 }
 
 @media (max-width: 640px) {
