@@ -72,7 +72,6 @@ h2 {
     100%  {background-position:50% -20px,-20px 50%,60px 50%,50% 60px,50%,50%,50%}
 }
 
-
 /*------- Loding-end -------*/
 
 /*------- Cursor-Custom-START -------*/
@@ -314,7 +313,6 @@ h2 {
 }
 
 #subContent .minArea .minbox {
-    /* mix-blend-mode: difference; */
     display: flex;
     width: auto;
     align-items: center;
@@ -601,7 +599,6 @@ h2 {
 #roll-text .track .text .box .pro-t img {
     margin-right: 0.5rem;
     width: 10%;
-    /* filter: invert(1); */
     filter: var(--ft-1);
 }
 #roll-text .track .text .box .pro-s {
@@ -1042,7 +1039,6 @@ h2 {
     justify-content:flex-start;
 }
 
-
 /*-----------------*/
 #subContent .swiper .swiper-slide .move_btn {
     position: absolute;
@@ -1054,7 +1050,6 @@ h2 {
     cursor: pointer;
 }
 
-/* nav */
 #subContent .swiper .swiper-slide .fancy-slider-button {
     transition: var(--t-btn);
     outline: none;
@@ -1377,7 +1372,7 @@ h2 {
 }
 
 #footArea .comment-container div .delete:hover {
-    color: #ff0000; /* 삭제 버튼에 호버되었을 때의 글꼴 색상을 변경합니다. */
+    color: #ff0000; /* 삭제 버튼 호버->글꼴 색상 변경 */
 }
 
 #footArea #comment-form {
@@ -1461,7 +1456,6 @@ h2 {
 #footArea #comment-form button:hover {
     background-color: #669fcb;
 }
-
 
 .hidden {
     display: none;
@@ -1676,7 +1670,7 @@ a#back-top {
     #Portfolio .con_hover {left: calc(64vw - 50px); bottom: calc(34vh - 20px);}
 
     .content {padding: 4rem;}
-
+    /* footer */
     #footArea #showMoreBtn {bottom: -5%; right: 23%;}
 }
 
@@ -1724,7 +1718,7 @@ a#back-top {
     /* folder-img*/
     #subContent .folderWrap .user {padding:2rem;}
     #subContent .folderWrap .folder__back{width:90px; height:60px;}
-
+    /* footer */
     #footArea .social_links {gap: 1rem;}
     #footArea .Comment-Wrap h2 {font-size: 4rem;}
 }
@@ -1768,7 +1762,7 @@ a#back-top {
 
     /* folder-img */
     #subContent .folderWrap {margin:auto 5em;}
-
+    /* footer */
     #footArea .Comment-Wrap h2 {font-size: 3.5rem;}
     #footArea #showMoreBtn {    right: 23.2%;}
 }
@@ -1793,7 +1787,7 @@ a#back-top {
     /* folder-img */
     #subContent .folderWrap {margin:auto 3.5em;}
     #subContent .folderWrap .user {padding: 2rem 0;}
-    
+    /* footer */
     #footArea .social_links {gap: 0.5rem;}
     #footArea .Comment-Wrap h2 {font-size: 3rem;}
 }
@@ -1979,7 +1973,8 @@ a#back-top {
 
     /* 3d-swiper */
     #subContent .swiper .swiper-slide {width: 300px;}
-
+    
+    /* footer */
     #footArea #showMoreBtn {width: 77%;}
 }
 
